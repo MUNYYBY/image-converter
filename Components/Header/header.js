@@ -29,7 +29,7 @@ export default function Header() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Offcanvas id="navbarScroll" className="" placement="end">
-          <Offcanvas.Header closeButton>
+          <Offcanvas.Header closeButton className="border-bottom">
             <Offcanvas.Title>Menu</Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
