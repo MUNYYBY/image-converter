@@ -32,22 +32,22 @@ export default function Footer() {
                 <h5 className="text-uppercase">Tools</h5>
                 <ul className="list-unstyled">
                   <li>
-                    <a href="#!" className="link-dark">
+                    <a href="#!" className="link-dark text-decoration-none">
                       Image Converter
                     </a>
                   </li>
                   <li>
-                    <a href="#!" className="link-dark">
+                    <a href="#!" className="link-dark text-decoration-none">
                       Image Meta Checker
                     </a>
                   </li>
                   <li>
-                    <a href="#!" className="link-dark">
+                    <a href="#!" className="link-dark text-decoration-none">
                       Image Compression
                     </a>
                   </li>
                   <li>
-                    <a href="#!" className="link-dark">
+                    <a href="#!" className="link-dark text-decoration-none">
                       Video Converter
                     </a>
                   </li>
