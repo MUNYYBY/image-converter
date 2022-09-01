@@ -1,3 +1,10 @@
+:root {
+  --Main-Color: rgba(0, 255, 36, 1);
+  --Font-Main-Color: rgba(0, 0, 0, 1);
+  --Font-Main-Dimmed: rgba(107, 107, 107, 1);
+  --Main-Color-Dimmed: rgba(0, 255, 36, 0.3);
+}
+
 html,
 body {
   padding: 0;
