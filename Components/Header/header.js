@@ -11,10 +11,7 @@ import styles from "./header.module.css";
 export default function Header() {
   return (
     <Navbar bg="light" expand="lg">
-      <Container
-        fluid
-        className="d-flex flex-direction-row justify-content-center"
-      >
+      <Container fluid>
         <Navbar.Brand href="#">
           <div className="Brand-name d-flex flex-direction-row justify-content-center align-items-center">
             <div className="mx-1">
@@ -66,15 +63,14 @@ export default function Header() {
               <p className="h4">Contact Us</p>
             </Nav.Link>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+          <Nav justify-content-center>
+            <Nav.Link href="#action2">
+              <p className="h4">Login</p>
+            </Nav.Link>
+            <Nav.Link>
+              <Button>Sign up</Button>
+            </Nav.Link>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
