@@ -12,8 +12,8 @@ import styles from "./header.module.css";
 
 export default function Header() {
   return (
-    <Navbar bg="light" expand="lg">
-      <Container fluid>
+    <Navbar bg="light" expand="lg" className="border-bottom">
+      <Container className="w-100">
         <Navbar.Brand href="#">
           <div className="Brand-name d-flex flex-direction-row justify-content-center align-items-center">
             <div className="mx-1">
@@ -72,7 +72,7 @@ export default function Header() {
               <Nav.Link href="#action2">
                 <p className="h4 color-black">Login</p>
               </Nav.Link>
-              <Button className="primary mx-1">Sign up</Button>
+              <Button className="primary mx-1">Create Account</Button>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

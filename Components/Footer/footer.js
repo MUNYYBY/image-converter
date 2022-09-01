@@ -4,8 +4,8 @@ import Logo from "../../public/assets/logo.png";
 
 export default function Footer() {
   return (
-    <footer className="align-self-baseline mt-5 mt-lg-3 w-100 position-absolute bottom-0 left-0">
-      <div className="footer-bottom bg-white border-top">
+    <footer className="bg-light align-self-baseline mt-5 mt-lg-3 w-100 position-absolute bottom-0 left-0">
+      <div className="footer-bottom border-top">
         <div className="container pb-1 pb-md-0">
           <div className="d-block px-3 px-md-5 pb-1 pb-md-0">
             <div className="row py-4 border-bottom border-black px-lg-5 justify-content-center align-items-center">
