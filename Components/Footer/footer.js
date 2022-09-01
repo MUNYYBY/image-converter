@@ -1,36 +1,57 @@
 import Link from "next/link";
+import Image from "next/image";
+import Logo from "../../public/assets/logo.png";
 
 export default function Footer() {
   return (
     <footer className="align-self-baseline mt-5 mt-lg-3 w-100 position-absolute bottom-0 left-0">
-      <div className="footer-logo text-center"></div>
-      <div className="footer-top"></div>
-      <div className="footer-bottom bg-white">
-        <div className="container pb-5 pb-md-0">
-          <div className="d-block px-3 px-md-5 pb-3 pb-md-0">
-            <div className="row py-4 border-bottom border-black px-lg-5 row-shrinker">
-              <div className="col-6 col-md-3 py-2 py-md-4 offset-md-1">
-                <h2>Tools</h2>
-                <Link href="">
-                  <a className="btn btn-block btn-link text-black fs-6 w-100">
-                    Image Converter
-                  </a>
-                </Link>
-                <Link href="">
-                  <a className="btn btn-block btn-link text-black fs-6 w-100 text-align-left">
-                    Image Meta Checker
-                  </a>
-                </Link>
-                <Link href="">
-                  <a className="btn btn-block btn-link text-black fs-6 w-100">
-                    Image Compression
-                  </a>
-                </Link>
-                <Link href="">
-                  <a className="btn btn-block btn-link text-black fs-6 w-100">
-                    Video Converter
-                  </a>
-                </Link>
+      <div className="footer-bottom bg-white border-top">
+        <div className="container pb-1 pb-md-0">
+          <div className="d-block px-3 px-md-5 pb-1 pb-md-0">
+            <div className="row py-4 border-bottom border-black px-lg-5 justify-content-center align-items-center">
+              <div className="col-md-4 mb-md-0 mb-3">
+                <div className="Brand-name">
+                  <div className="d-flex flex-direction-row  align-items-center">
+                    <div className="mx-1">
+                      <Image
+                        src={Logo}
+                        alt="image-converter logo"
+                        height={65}
+                        width={65}
+                      />
+                    </div>
+                    <h4>Image-converter</h4>
+                  </div>
+                  <p className="col-md-10">
+                    Lorem ipsum dolor sit amet dolor sit consectetur adipiscing
+                    elit aliquam
+                  </p>
+                </div>
+              </div>
+              <div className="col-md-3 mb-md-0 mb-3">
+                <h5 className="text-uppercase">Tools</h5>
+                <ul className="list-unstyled">
+                  <li>
+                    <a href="#!" className="link-dark">
+                      Image Converter
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!" className="link-dark">
+                      Image Meta Checker
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!" className="link-dark">
+                      Image Compression
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!" className="link-dark">
+                      Video Converter
+                    </a>
+                  </li>
+                </ul>
               </div>
               <div className="col-md-5 py-md-4 text-black">
                 <div className="d-block px-2 px-md-0 mt-4 mt-md-0">
@@ -92,7 +113,7 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div className="py-3 d-flex flex-direction-row justify-content-between align-items-center mb-3 pb-md-0">
+            <div className="py-3 row mb-3 pb-md-0">
               <div className="col-12 col-md-4 text-black text-center text-md-left mt-3 mt-md-0">
                 Copyright © 2022 Image Converter
               </div>
