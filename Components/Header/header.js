@@ -65,9 +65,9 @@ export default function Header() {
           </Nav>
           <Nav justify-content-center>
             <Nav.Link href="#action2">
-              <p className="h4">Login</p>
+              <p className="h4 color-black">Login</p>
             </Nav.Link>
-            <Button>Sign up</Button>
+            <Button className="primary mx-1">Sign up</Button>
           </Nav>
         </Navbar.Collapse>
       </Container>
