@@ -3,5 +3,5 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
-  return <div>This is image converter website</div>;
+  return <div className="App">hello world</div>;
 }
