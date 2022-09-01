@@ -4,7 +4,21 @@
   --Font-Main-Dimmed: rgba(107, 107, 107, 1);
   --Main-Color-Dimmed: rgba(0, 255, 36, 0.3);
 }
-
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited {
+  background-color: var(--Main-Color) !important;
+  color: black !important;
+  border: none !important;
+  font-weight: 500 !important;
+  /* padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important; */
+}
+.btn-primary:hover {
+  background-color: var(--Main-Color-Dimmed) !important;
+}
 html,
 body {
   padding: 0;

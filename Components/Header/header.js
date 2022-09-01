@@ -67,9 +67,7 @@ export default function Header() {
             <Nav.Link href="#action2">
               <p className="h4">Login</p>
             </Nav.Link>
-            <Nav.Link>
-              <Button>Sign up</Button>
-            </Nav.Link>
+            <Button>Sign up</Button>
           </Nav>
         </Navbar.Collapse>
       </Container>
