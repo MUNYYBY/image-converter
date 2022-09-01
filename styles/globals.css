@@ -19,12 +19,16 @@
 .btn-primary:hover {
   background-color: var(--Main-Color-Dimmed) !important;
 }
+@font-face {
+  font-family: "Manrope";
+  src: url("../public/fonts/Manrope.ttf");
+  font-style: normal;
+}
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Manrope", sans-serif !important;
 }
 
 a {
