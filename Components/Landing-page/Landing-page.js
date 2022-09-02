@@ -65,7 +65,7 @@ export default function LandingPage() {
             </h1>
           </Col>
         </Row>
-        <Row className="justify-content-center align-items-center">
+        <Row className="justify-content-center align-items-center pb-5">
           <Col lg={4} md={6} sm={10} className="Features-card">
             <div className="position-relative p-4 bg-light d-flex flex-column justify-content-between rounded">
               <div
@@ -158,6 +158,18 @@ export default function LandingPage() {
                 </p>
               </div>
             </div>
+          </Col>
+        </Row>
+        <Row className="justify-content-center align-items-center w-100 py-5">
+          <Col
+            lg={12}
+            sm={10}
+            className="rounded p-4 bg-light d-flex flex-row justify-content-between align-items-center"
+          >
+            <h4 className="text-left">
+              Convert Images to any format of your like
+            </h4>
+            <button className="btn btn-primary">Convert Images</button>
           </Col>
         </Row>
       </Container>
