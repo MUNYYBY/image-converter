@@ -34,7 +34,7 @@ export default function LandingPage() {
               </div>
             </div>
           </Col>
-          <Col lg={6} sm={10}>
+          <Col lg={6} sm={10} className="mt-3 px-lg-5">
             <div className="d-flex flex-column w-100">
               <div className="">
                 <h4 className="text-primary">Get Started for free!</h4>
@@ -57,6 +57,13 @@ export default function LandingPage() {
               </form>
               <button className="p-3 btn btn-primary w-100">Convert Now</button>
             </div>
+          </Col>
+        </Row>
+        <Row className="justify-content-center align-items-center w-100 py-5">
+          <Col lg={8} sm={10}>
+            <h1 className="text-center text-underline">
+              <u>Convert Images to any format of your like</u>
+            </h1>
           </Col>
         </Row>
       </Container>
