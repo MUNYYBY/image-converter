@@ -8,8 +8,8 @@ import { TbFileDownload } from "react-icons/tb";
 export default function LandingPage() {
   return (
     <main className="Landing-page mt-5 w-100">
-      <Container className="w-100">
-        <Row className="justify-content-center align-items-center">
+      <Container>
+        <Row className="Landing-information justify-content-center align-items-center py-5 px-lg-5">
           <Col lg={6} sm={10}>
             <div className="d-flex flex-column">
               <div className="text-align-left my-2">
@@ -17,7 +17,7 @@ export default function LandingPage() {
                   className="font-weight-bold text-align-left "
                   style={{ fontWeight: 600 }}
                 >
-                  Managing business payments has never been easier
+                  Managing business payments has never been easier!
                 </h1>
               </div>
               <div className="text-align-left my-2">
@@ -33,7 +33,7 @@ export default function LandingPage() {
               </div>
             </div>
           </Col>
-          <Col lg={6} sm={10} className="mt-3 px-lg-5">
+          <Col lg={6} sm={10} className="mt-3 px-lg-5 ">
             <div className="d-flex flex-column w-100">
               <div className="">
                 <h4 className="text-primary">Get Started for free!</h4>
