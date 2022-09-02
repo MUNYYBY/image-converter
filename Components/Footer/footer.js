@@ -69,14 +69,8 @@ export default function Footer() {
                           className="w-100 text-warning fs-8"
                         ></span>
                         <input
-                          type="hidden"
-                          name="_token"
-                          value="EaVdDeoHjisX6B09HQ2Pjw0PLloogWhiMJFWeg3p"
-                        />
-                        <input
                           type="email"
                           name="email"
-                          id="email_sub"
                           className="form-control bg-transparent text-black placeholder-black border-2 border-black border-end-0"
                           placeholder="Your email"
                           aria-label="Subscribe"
