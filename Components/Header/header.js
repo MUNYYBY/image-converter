@@ -12,7 +12,12 @@ import styles from "./header.module.css";
 
 export default function Header() {
   return (
-    <Navbar bg="light" expand="lg" className="border-bottom">
+    <Navbar
+      id={styles.Header}
+      bg="light"
+      expand="lg"
+      className="border-bottom sticky-top"
+    >
       <Container className="w-100">
         <Navbar.Brand href="#">
           <div className="Brand-name d-flex flex-direction-row justify-content-center align-items-center">

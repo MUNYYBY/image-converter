@@ -1,10 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../public/assets/logo.png";
+import styles from "./footer.module.css";
 
 export default function Footer() {
   return (
-    <footer className="bg-light align-self-baseline mt-5 mt-lg-3 w-100 ">
+    <footer
+      id={styles.footer}
+      className="bg-light align-self-baseline mt-5 mt-lg-3 w-100 "
+    >
       <div className="footer-bottom border-top">
         <div className="container pb-1 pb-md-0">
           <div className="d-block pb-1 pb-md-0">
@@ -83,7 +87,7 @@ export default function Footer() {
                       </div>
                     </form>
                   </div>
-                  <p className="captcha-note fs-8">
+                  <p className="captcha-note">
                     This site is protected by reCAPTCHA and the Google{" "}
                     <Link href="https://policies.google.com/privacy">
                       <a
