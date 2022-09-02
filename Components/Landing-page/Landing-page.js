@@ -1,10 +1,9 @@
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-
-import Form from "react-bootstrap/Form";
-import Image from "next/image";
+import { HiOutlineLightBulb } from "react-icons/hi";
+import { RiPencilRuler2Line } from "react-icons/ri";
+import { TbFileDownload } from "react-icons/tb";
 
 export default function LandingPage() {
   return (
@@ -55,7 +54,7 @@ export default function LandingPage() {
                   required=""
                 />
               </form>
-              <button className="p-3 btn btn-primary w-100">Convert Now</button>
+              <button className="p-3 btn btn-primary w-100">Get Started</button>
             </div>
           </Col>
         </Row>
@@ -64,6 +63,101 @@ export default function LandingPage() {
             <h1 className="text-center text-underline">
               <u>Convert Images to any format of your like</u>
             </h1>
+          </Col>
+        </Row>
+        <Row className="justify-content-center align-items-center">
+          <Col lg={4} md={6} sm={10} className="Features-card">
+            <div className="position-relative p-4 bg-light d-flex flex-column justify-content-between rounded">
+              <div
+                className="position-absolute bottom-0 right-0 z-index-0"
+                style={{ paddingLeft: "60%" }}
+              >
+                <h1
+                  style={{
+                    fontSize: "12rem",
+                    color: "black",
+                    opacity: "0.05",
+                  }}
+                >
+                  1
+                </h1>
+              </div>
+              <div className="card-content z-index-1">
+                <div
+                  className="d-block p-2 mb-2 bg-white d-flex flex-column justify-content-center align-items-center rounded"
+                  style={{ width: "4rem", height: "4rem" }}
+                >
+                  <HiOutlineLightBulb size={40} color="#00FF24" />
+                </div>
+                <h4>Download Converted Image</h4>
+                <p>
+                  lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                  lorem ipsum lorem ipsum lorem ipsum.
+                </p>
+              </div>
+            </div>
+          </Col>
+          <Col lg={4} md={6} sm={10} className="Features-card">
+            <div className="position-relative p-4 bg-light d-flex flex-column justify-content-between rounded">
+              <div
+                className="position-absolute bottom-0 right-0 z-index-0"
+                style={{ paddingLeft: "60%" }}
+              >
+                <h1
+                  style={{
+                    fontSize: "12rem",
+                    color: "black",
+                    opacity: "0.05",
+                  }}
+                >
+                  2
+                </h1>
+              </div>
+              <div className="card-content z-index-1">
+                <div
+                  className="d-block p-2 mb-2 bg-white d-flex flex-column justify-content-center align-items-center rounded"
+                  style={{ width: "4rem", height: "4rem" }}
+                >
+                  <RiPencilRuler2Line size={40} color="#00FF24" />
+                </div>
+                <h4>Select Format</h4>
+                <p>
+                  lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                  lorem ipsum lorem ipsum lorem ipsum.
+                </p>
+              </div>
+            </div>
+          </Col>
+          <Col lg={4} md={6} sm={10} className="Features-card">
+            <div className="position-relative p-4 bg-light d-flex flex-column justify-content-between rounded">
+              <div
+                className="position-absolute bottom-0 right-0 z-index-0"
+                style={{ paddingLeft: "60%" }}
+              >
+                <h1
+                  style={{
+                    fontSize: "12rem",
+                    color: "black",
+                    opacity: "0.05",
+                  }}
+                >
+                  3
+                </h1>
+              </div>
+              <div className="card-content z-index-1">
+                <div
+                  className="d-block p-2 mb-2 bg-white d-flex flex-column justify-content-center align-items-center rounded"
+                  style={{ width: "4rem", height: "4rem" }}
+                >
+                  <TbFileDownload size={40} color="#00FF24" />
+                </div>
+                <h4>Download Converted Image</h4>
+                <p>
+                  lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                  lorem ipsum lorem ipsum lorem ipsum.
+                </p>
+              </div>
+            </div>
           </Col>
         </Row>
       </Container>
