@@ -1,0 +1,12 @@
+#ImagesConversionPit {
+  box-sizing: border-box;
+  height: 25rem;
+  background-color: var(--Main-Color-Dimmed);
+  border: 4px dashed var(--Main-Color);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
