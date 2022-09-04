@@ -38,40 +38,30 @@ export default function Footer() {
                 </div>
               </Col>
               <Col md={3} className="mb-md-0 mb-3">
-                <h4 className="text-uppercase px-3 py-1">Tools</h4>
-                <Nav>
-                  <ul className="list-unstyled">
-                    <li>
-                      <Nav.Link>
-                        <a href="#!" className="link-dark text-decoration-none">
-                          Image Converter
-                        </a>
-                      </Nav.Link>
-                    </li>
+                <h4 className="text-uppercase">Tools</h4>
+                <ul className="list-unstyled">
+                  <li>
+                    <a href="#!" className="link-dark text-decoration-none">
+                      Image Converter
+                    </a>
+                  </li>
 
-                    <li>
-                      <Nav.Link>
-                        <a href="#!" className="link-dark text-decoration-none">
-                          Image Meta Checker
-                        </a>
-                      </Nav.Link>
-                    </li>
-                    <li>
-                      <Nav.Link>
-                        <a href="#!" className="link-dark text-decoration-none">
-                          Image Compression
-                        </a>
-                      </Nav.Link>
-                    </li>
-                    <li>
-                      <Nav.Link>
-                        <a href="#!" className="link-dark text-decoration-none">
-                          Video Converter
-                        </a>
-                      </Nav.Link>
-                    </li>
-                  </ul>
-                </Nav>
+                  <li>
+                    <a href="#!" className="link-dark text-decoration-none">
+                      Image Meta Checker
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!" className="link-dark text-decoration-none">
+                      Image Compression
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!" className="link-dark text-decoration-none">
+                      Video Converter
+                    </a>
+                  </li>
+                </ul>
               </Col>
               <Col md={5} className="py-md-4 text-black">
                 <div className="d-block px-2 px-md-0 mt-4 mt-md-0">
