@@ -2,6 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../public/assets/logo.png";
 import styles from "./footer.module.css";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Nav from "react-bootstrap/Nav";
 
 export default function Footer() {
   return (
@@ -10,10 +15,10 @@ export default function Footer() {
       className="bg-light align-self-baseline mt-5 mt-lg-3 w-100 "
     >
       <div className="footer-bottom border-top">
-        <div className="container pb-1 pb-md-0">
+        <Container className="pb-1 pb-md-0">
           <div className="d-block pb-1 pb-md-0">
-            <div className="row py-4 border-bottom border-black justify-content-center align-items-center">
-              <div className="col-md-4 mb-md-0 mb-3">
+            <Row className="row py-4 border-bottom border-black justify-content-center align-items-center">
+              <Col md={4} className="mb-md-0 mb-3">
                 <div className="Brand-name">
                   <div className="d-flex flex-direction-row  align-items-center">
                     <div className="mx-1">
@@ -31,33 +36,44 @@ export default function Footer() {
                     elit aliquam
                   </p>
                 </div>
-              </div>
-              <div className="col-md-3 mb-md-0 mb-3">
-                <h5 className="text-uppercase">Tools</h5>
-                <ul className="list-unstyled">
-                  <li>
-                    <a href="#!" className="link-dark text-decoration-none">
-                      Image Converter
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!" className="link-dark text-decoration-none">
-                      Image Meta Checker
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!" className="link-dark text-decoration-none">
-                      Image Compression
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!" className="link-dark text-decoration-none">
-                      Video Converter
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className="col-md-5 py-md-4 text-black">
+              </Col>
+              <Col md={3} className="mb-md-0 mb-3">
+                <h4 className="text-uppercase px-3 py-1">Tools</h4>
+                <Nav>
+                  <ul className="list-unstyled">
+                    <li>
+                      <Nav.Link>
+                        <a href="#!" className="link-dark text-decoration-none">
+                          Image Converter
+                        </a>
+                      </Nav.Link>
+                    </li>
+
+                    <li>
+                      <Nav.Link>
+                        <a href="#!" className="link-dark text-decoration-none">
+                          Image Meta Checker
+                        </a>
+                      </Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link>
+                        <a href="#!" className="link-dark text-decoration-none">
+                          Image Compression
+                        </a>
+                      </Nav.Link>
+                    </li>
+                    <li>
+                      <Nav.Link>
+                        <a href="#!" className="link-dark text-decoration-none">
+                          Video Converter
+                        </a>
+                      </Nav.Link>
+                    </li>
+                  </ul>
+                </Nav>
+              </Col>
+              <Col md={5} className="py-md-4 text-black">
                 <div className="d-block px-2 px-md-0 mt-4 mt-md-0">
                   <div className="fs-5 font-weight-bold">Stay up to date!</div>
                   <div>
@@ -81,9 +97,9 @@ export default function Footer() {
                           aria-describedby="footer-Subscribe-btn"
                           required=""
                         />
-                        <button type="submit" className="btn btn-primary">
+                        <Button type="submit" className="btn btn-primary">
                           Sign Up
-                        </button>
+                        </Button>
                       </div>
                     </form>
                   </div>
@@ -109,8 +125,8 @@ export default function Footer() {
                     apply.
                   </p>
                 </div>
-              </div>
-            </div>
+              </Col>
+            </Row>
             <div className="py-3 row mb-3 pb-md-0">
               <div className="col-12 col-md-4 text-black text-center text-md-left mt-3 mt-md-0">
                 Copyright © 2022 Image Converter
@@ -127,7 +143,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
     </footer>
   );

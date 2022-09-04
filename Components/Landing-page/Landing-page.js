@@ -1,4 +1,5 @@
 import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { HiOutlineLightBulb } from "react-icons/hi";
@@ -27,9 +28,9 @@ export default function LandingPage() {
                 </h4>
               </div>
               <div>
-                <button className="rounded-pill p-3 px-4 btn btn-primary">
+                <Button className="rounded-pill p-3 px-4 btn btn-primary">
                   Convert Now
-                </button>
+                </Button>
               </div>
             </div>
           </Col>
@@ -54,7 +55,7 @@ export default function LandingPage() {
                   required=""
                 />
               </form>
-              <button className="p-3 btn btn-primary w-100">Get Started</button>
+              <Button className="p-3 btn btn-primary w-100">Get Started</Button>
             </div>
           </Col>
         </Row>
