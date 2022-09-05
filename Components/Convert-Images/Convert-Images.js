@@ -4,6 +4,8 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Accordion from "react-bootstrap/Accordion";
+import Form from "react-bootstrap/Form";
+import { BiImageAdd } from "react-icons/bi";
 
 export default function ConvertImages() {
   return (
@@ -23,7 +25,12 @@ export default function ConvertImages() {
           </Col>
           <Col md={10} sm={10}>
             <div id={styles.ImagesConversionPit} className="w-100">
-              <Button className="btn btn-primary">Choose File</Button>
+              <Form action="">
+                <div className={styles.chooseImageBtn}>
+                  <BiImageAdd size={50} color="black" />
+                  <input type="file" className={styles.chooseFile_input} />
+                </div>
+              </Form>
             </div>
           </Col>
           <Col lg={8} md={10} sm={10} className="mt-5">
