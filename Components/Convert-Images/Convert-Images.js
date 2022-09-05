@@ -33,6 +33,12 @@ export default function ConvertImages() {
               </Form>
             </div>
           </Col>
+          <Col lg={5} md={5} sm={10} className="panel panel-default">
+            <div class="panel-body">Panel Content</div>
+          </Col>
+          <Col lg={5} md={5} sm={10} className="panel panel-default">
+            <div class="panel-body">Panel Content</div>
+          </Col>
           <Col lg={8} md={10} sm={10} className="mt-5">
             <Accordion defaultActiveKey={["0"]} flush>
               <Accordion.Item eventKey="0">
