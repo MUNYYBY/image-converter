@@ -53,7 +53,11 @@ export default function Header() {
                 id="navbarScrollingDropdown"
               >
                 <NavDropdown.Item>
-                  <Link href="./cx/image-converter">Image converter</Link>
+                  <Link href="/cx/image-converter">
+                    <a className="link-dark text-decoration-none m-0">
+                      Image converter
+                    </a>
+                  </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action4">
                   Image Meta Checker
