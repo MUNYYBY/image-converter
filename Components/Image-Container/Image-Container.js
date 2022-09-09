@@ -4,19 +4,19 @@ export default function ImageContainer(props) {
   return (
     <div
       id={styles.ImageContainer}
-      className="bg-body w-100 p-3 rounded shadow"
+      className="bg-body w-100 p-3 my-3 rounded shadow"
     >
       <div className="d-flex flex-row justify-content-between align-items-center">
         <div className="d-flex flex-row justify-content-center align-items-center">
           <AiOutlineFileImage size={32} />
-          <p className="mb-0 px-2 text-left">Hello world.jpeg</p>
+          <p className="mb-0 px-2 text-left">{props.imageName}</p>
         </div>
         <div className="d-flex flex-row justify-content-center align-items-center">
           <div
             className="px-2 py-1 rounded "
             style={{ backgroundColor: "#EBEBEB" }}
           >
-            <p className="m-0">312.14kb</p>
+            <p className="m-0">{props.imageSize}</p>
           </div>
           <div
             className="p-1 ms-4 rounded justify-content-center align-items-center"

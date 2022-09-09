@@ -56,7 +56,14 @@ export default function ConvertImages() {
           {/* Image containers when user uploads images */}
           <Col lg={8} md={10} sm={10} className="mt-3 mb-3">
             <div id={styles.ImagesContainerStack}>
-              <ImageContainer />
+              <ImageContainer
+                imageName="Hello world.jpeg"
+                imageSize="322.53kb "
+              />
+              <ImageContainer
+                imageName="Hello world.jpeg"
+                imageSize="322.53kb "
+              />
             </div>
           </Col>
           <Col lg={5} md={5} sm={10} className="panel panel-default">
