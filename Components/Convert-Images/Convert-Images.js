@@ -128,7 +128,7 @@ export default function ConvertImages() {
             </div>
           </Col>
           <Col lg={8} md={10} sm={10} className="mt-5">
-            <Accordion flush>
+            <Accordion flush className="rounded shadow">
               <Accordion.Item eventKey="0">
                 <Accordion.Header>Advance Options</Accordion.Header>
                 <Accordion.Body>

@@ -4,7 +4,7 @@ export default function ImageContainer(props) {
   return (
     <div
       id={styles.ImageContainer}
-      className="bg-body w-100 p-3 my-3 rounded shadow"
+      className="bg-body w-100 p-3 my-2 rounded shadow"
     >
       <div className="d-flex flex-row justify-content-between align-items-center">
         <div className="d-flex flex-row justify-content-center align-items-center">
