@@ -67,7 +67,7 @@ export default function ConvertImages() {
               />
             </div>
           </Col>
-          <Col lg={8} md={10} sm={10} className="my-2">
+          <Col lg={10} md={10} sm={10} className="my-2">
             <div className="d-flex flex-row justify-content-between align-items-center">
               <p className="me-4 mb-0 text-left fs-6">
                 <b>Note:</b> We only store you image for the life span of
@@ -81,11 +81,51 @@ export default function ConvertImages() {
               </button>
             </div>
           </Col>
-          <Col lg={5} md={5} sm={10} className="panel panel-default">
-            <div class="panel-body">Panel Content</div>
+          <Col
+            lg={4}
+            md={4}
+            sm={10}
+            className="panel panel-default rounded shadow me-md-1 p-4 my-sm-3"
+          >
+            <div class="panel-body">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="QualityRadio1"
+                  id="QualityRadio1"
+                />
+                <label class="form-check-label" for="QualityRadio1">
+                  <div className="formPanelContentContainer">
+                    <p className="fw-bold mb-0">Best Quality</p>
+                    <p className="mb-0">Ideal for high resolution displays</p>
+                  </div>
+                </label>
+              </div>
+            </div>
           </Col>
-          <Col lg={5} md={5} sm={10} className="panel panel-default">
-            <div class="panel-body">Panel Content</div>
+          <Col
+            lg={4}
+            md={4}
+            sm={10}
+            className="panel panel-default my-4 rounded shadow ms-md-1 p-4 my-sm-3"
+          >
+            <div class="panel-body">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="QualityRadio1"
+                  id="QualityRadio1"
+                />
+                <label class="form-check-label" for="QualityRadio1">
+                  <div className="formPanelContentContainer">
+                    <p className="fw-bold mb-0">Small Quality</p>
+                    <p className="mb-0">Ideal for display photos & uploading</p>
+                  </div>
+                </label>
+              </div>
+            </div>
           </Col>
           <Col lg={8} md={10} sm={10} className="mt-5">
             <Accordion flush>
