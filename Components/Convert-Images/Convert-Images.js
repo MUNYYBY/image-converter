@@ -55,7 +55,7 @@ export default function ConvertImages() {
           </Col>
           {/* Image containers when user uploads images */}
           <Col lg={8} md={10} sm={10} className="mt-3 mb-3">
-            <div className={styles.ImagesContainer}>
+            <div id={styles.ImagesContainerStack}>
               <ImageContainer />
             </div>
           </Col>
