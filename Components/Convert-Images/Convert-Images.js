@@ -59,7 +59,7 @@ export default function ConvertImages() {
             <div class="panel-body">Panel Content</div>
           </Col>
           <Col lg={8} md={10} sm={10} className="mt-5">
-            <Accordion defaultActiveKey={["0"]} flush>
+            <Accordion flush>
               <Accordion.Item eventKey="0">
                 <Accordion.Header>Advance Options</Accordion.Header>
                 <Accordion.Body>

@@ -117,7 +117,7 @@ export default function Footer() {
                 </div>
               </Col>
             </Row>
-            <div className="py-3 row mb-3 pb-md-0">
+            <div className="py-3 row mb-3 pb-md-0 justify-content-center">
               <div className="col-12 col-md-4 text-black text-center text-md-left mt-3 mt-md-0">
                 Copyright © 2022 Image Converter
               </div>
