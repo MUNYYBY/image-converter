@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import Accordion from "react-bootstrap/Accordion";
 import Form from "react-bootstrap/Form";
 import { BiImageAdd } from "react-icons/bi";
+import { CgArrowsExchangeAlt } from "react-icons/cg";
 import Image from "next/image";
 import uploadImage from "../../public/assets/upload.svg";
 import ImageContainer from "../Image-Container/Image-Container";
@@ -54,7 +55,7 @@ export default function ConvertImages() {
             </div>
           </Col>
           {/* Image containers when user uploads images */}
-          <Col lg={8} md={10} sm={10} className="mt-3 mb-3">
+          <Col lg={8} md={10} sm={10} className="my-3">
             <div id={styles.ImagesContainerStack}>
               <ImageContainer
                 imageName="Hello world.jpeg"
@@ -66,18 +67,19 @@ export default function ConvertImages() {
               />
             </div>
           </Col>
-          <Col
-            lg={5}
-            md={5}
-            sm={10}
-            className="d-flex flex-row justify-content-between align-items-center"
-          >
-            <p className="text-center">
-              Note: We only store you image for the life span of coversion, when
-              images are converted they are automatically deleted from our
-              database.
-            </p>
-            <button className="btn btn-primary">Convert</button>
+          <Col lg={8} md={10} sm={10} className="my-2">
+            <div className="d-flex flex-row justify-content-between align-items-center">
+              <p className="me-4 mb-0 text-left fs-6">
+                <b>Note:</b> We only store you image for the life span of
+                coversion, when images are converted they are automatically
+                deleted from our database.
+              </p>
+              <button className="btn btn-primary fs-4 d-flex flex-row justify-content-between align-items-center">
+                {" "}
+                <CgArrowsExchangeAlt size={35} />
+                Convert
+              </button>
+            </div>
           </Col>
           <Col lg={5} md={5} sm={10} className="panel panel-default">
             <div class="panel-body">Panel Content</div>
