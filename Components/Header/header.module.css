@@ -6,3 +6,6 @@
   background-color: var(--Font-Main-Dimmed);
   border-radius: 1rem;
 }
+#SiteInfoContainer {
+  cursor: pointer;
+}

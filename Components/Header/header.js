@@ -9,6 +9,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import Image from "next/image";
 import Logo from "../../public/assets/logo.png";
 import styles from "./header.module.css";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -19,18 +20,23 @@ export default function Header() {
       className="border-bottom sticky-top"
     >
       <Container className="w-100">
-        <Navbar.Brand href="#">
-          <div className="Brand-name d-flex flex-direction-row justify-content-center align-items-center">
-            <div className="mx-1">
-              <Image
-                src={Logo}
-                alt="image-converter logo"
-                height={65}
-                width={65}
-              />
+        <Navbar.Brand>
+          <Link href="/">
+            <div
+              id={styles.SiteInfoContainer}
+              className="Brand-name d-flex flex-direction-row justify-content-center align-items-center"
+            >
+              <div className="mx-1">
+                <Image
+                  src={Logo}
+                  alt="image-converter logo"
+                  height={65}
+                  width={65}
+                />
+              </div>
+              <h4>Image-converter</h4>
             </div>
-            <h4>Image-converter</h4>
-          </div>
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Offcanvas id="navbarScroll" className="" placement="end">
@@ -46,8 +52,8 @@ export default function Header() {
                 title={<span className="h4">Tools</span>}
                 id="navbarScrollingDropdown"
               >
-                <NavDropdown.Item href="#action3">
-                  Image converter
+                <NavDropdown.Item>
+                  <Link href="./cx/image-converter">Image converter</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action4">
                   Image Meta Checker
