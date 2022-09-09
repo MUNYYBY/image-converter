@@ -116,9 +116,9 @@ export default function ConvertImages() {
                   class="form-check-input"
                   type="radio"
                   name="QualityRadio1"
-                  id="QualityRadio1"
+                  id="QualityRadio2"
                 />
-                <label class="form-check-label" for="QualityRadio1">
+                <label class="form-check-label" for="QualityRadio2">
                   <div className="formPanelContentContainer">
                     <p className="fw-bold mb-0">Small Quality</p>
                     <p className="mb-0">Ideal for display photos & uploading</p>
