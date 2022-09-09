@@ -8,6 +8,7 @@ import Form from "react-bootstrap/Form";
 import { BiImageAdd } from "react-icons/bi";
 import Image from "next/image";
 import uploadImage from "../../public/assets/upload.svg";
+import ImageContainer from "../Image-Container/Image-Container";
 
 export default function ConvertImages() {
   return (
@@ -50,6 +51,12 @@ export default function ConvertImages() {
                   </p>
                 </div>
               </div>
+            </div>
+          </Col>
+          {/* Image containers when user uploads images */}
+          <Col lg={8} md={10} sm={10} className="mt-3 mb-3">
+            <div className={styles.ImagesContainer}>
+              <ImageContainer />
             </div>
           </Col>
           <Col lg={5} md={5} sm={10} className="panel panel-default">
