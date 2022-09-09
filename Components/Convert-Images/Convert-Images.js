@@ -66,6 +66,19 @@ export default function ConvertImages() {
               />
             </div>
           </Col>
+          <Col
+            lg={5}
+            md={5}
+            sm={10}
+            className="d-flex flex-row justify-content-between align-items-center"
+          >
+            <p className="text-center">
+              Note: We only store you image for the life span of coversion, when
+              images are converted they are automatically deleted from our
+              database.
+            </p>
+            <button className="btn btn-primary">Convert</button>
+          </Col>
           <Col lg={5} md={5} sm={10} className="panel panel-default">
             <div class="panel-body">Panel Content</div>
           </Col>
