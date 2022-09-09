@@ -6,6 +6,8 @@ import Row from "react-bootstrap/Row";
 import Accordion from "react-bootstrap/Accordion";
 import Form from "react-bootstrap/Form";
 import { BiImageAdd } from "react-icons/bi";
+import Image from "next/image";
+import uploadImage from "../../public/assets/upload.svg";
 
 export default function ConvertImages() {
   return (
@@ -24,13 +26,30 @@ export default function ConvertImages() {
             </h4>
           </Col>
           <Col md={10} sm={10}>
-            <div id={styles.ImagesConversionPit} className="w-100">
-              <Form action="">
-                <div className={styles.chooseImageBtn}>
-                  <BiImageAdd size={50} color="black" />
-                  <input type="file" className={styles.chooseFile_input} />
+            <div id={styles.UploadImagesPit} className="w-100">
+              <div className="Upload-Images-pit-content-container d-flex flex-column justify-content-center align-items-center">
+                <div className="drag-and-drop-container d-flex flex-column justify-content-center align-items-center">
+                  <Image
+                    src={uploadImage}
+                    height={100}
+                    width={100}
+                    rel="upload image for upload pit"
+                  />
+                  <p>Drag and drop files here</p>
                 </div>
-              </Form>
+                <div className="choose-files-container d-flex flex-column justify-content-center align-items-center w-75">
+                  <Form action="">
+                    <div className={styles.chooseImageBtn}>
+                      <BiImageAdd size={50} color="black" />
+                      <input type="file" className={styles.chooseFile_input} />
+                    </div>
+                  </Form>
+                  <p className="text-center mt-2">
+                    Upload your image or drag and drop (max size 20 mb) You can
+                    convert up-to 10 images at a time
+                  </p>
+                </div>
+              </div>
             </div>
           </Col>
           <Col lg={5} md={5} sm={10} className="panel panel-default">
