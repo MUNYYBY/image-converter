@@ -69,6 +69,7 @@ export default function ConvertImages() {
                   <input
                     type="file"
                     className={styles.chooseFile_input}
+                    multiple={true}
                     placeholder="Choose file"
                     ref={hiddenFileInput}
                     onChange={handleFileInputChange}
@@ -114,15 +115,15 @@ export default function ConvertImages() {
             sm={10}
             className="panel panel-default rounded shadow me-md-1 p-4 my-sm-3"
           >
-            <div class="panel-body">
-              <div class="form-check">
+            <div className="panel-body">
+              <div className="form-check">
                 <input
-                  class="form-check-input"
+                  className="form-check-input"
                   type="radio"
                   name="QualityRadio1"
                   id="QualityRadio1"
                 />
-                <label class="form-check-label" for="QualityRadio1">
+                <label className="form-check-label" for="QualityRadio1">
                   <div className="formPanelContentContainer">
                     <p className="fw-bold mb-0">Best Quality</p>
                     <p className="mb-0">Ideal for high resolution displays</p>
@@ -137,15 +138,15 @@ export default function ConvertImages() {
             sm={10}
             className="panel panel-default my-4 rounded shadow ms-md-1 p-4 my-sm-3"
           >
-            <div class="panel-body">
-              <div class="form-check">
+            <div className="panel-body">
+              <div className="form-check">
                 <input
-                  class="form-check-input"
+                  className="form-check-input"
                   type="radio"
                   name="QualityRadio1"
                   id="QualityRadio2"
                 />
-                <label class="form-check-label" for="QualityRadio2">
+                <label className="form-check-label" for="QualityRadio2">
                   <div className="formPanelContentContainer">
                     <p className="fw-bold mb-0">Small Quality</p>
                     <p className="mb-0">Ideal for display photos & uploading</p>

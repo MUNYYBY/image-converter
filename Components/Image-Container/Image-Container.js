@@ -24,7 +24,7 @@ export default function ImageContainer(props) {
           >
             <button
               type="button"
-              class="btn-close mb-0"
+              className="btn-close mb-0"
               aria-label="Close"
             ></button>
           </div>
