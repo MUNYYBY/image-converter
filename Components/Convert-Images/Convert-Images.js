@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styles from "./Convert-Images.module.css";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -14,19 +14,10 @@ import ImageContainer from "../Image-Container/Image-Container";
 import { useDropzone } from "react-dropzone";
 
 export default function ConvertImages() {
-  const [files, setFiles] = useState([]);
-  const { getRootProps, getInputProps } = useDropzone({
-    accept: "image/*",
-    onDrop: (acceptedFiles) => {
-      setFiles(
-        acceptedFiles.map((file) =>
-          Object.assign(file, {
-            preview: URL.createObjectURL(file),
-          })
-        )
-      );
-    },
-  });
+  const hiddenFileInput = useRef(null);
+  const handleChooseFileBtn = (event) => {
+    hiddenFileInput.current.click();
+  };
   return (
     <section className="Images-converter-container">
       <Container>
@@ -55,12 +46,19 @@ export default function ConvertImages() {
                   <p>Drag and drop files here</p>
                 </div>
                 <div className="choose-files-container d-flex flex-column justify-content-center align-items-center w-75">
-                  <Form action="">
-                    <div className={styles.chooseImageBtn}>
-                      <BiImageAdd size={50} color="black" />
-                      <input type="file" className={styles.chooseFile_input} />
-                    </div>
-                  </Form>
+                  <Button
+                    onClick={handleChooseFileBtn}
+                    className="d-flex flex-row justify-content-center align-items-center"
+                  >
+                    <BiImageAdd size={50} color="black" />
+                    <h4 className="m-0">Choose file</h4>
+                  </Button>
+                  <input
+                    type="file"
+                    className={styles.chooseFile_input}
+                    placeholder="Choose file"
+                    ref={hiddenFileInput}
+                  />
                   <p className="text-center mt-2">
                     Upload your image or drag and drop (max size 20 mb) You can
                     convert up-to 10 images at a time
