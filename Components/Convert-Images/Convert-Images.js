@@ -18,6 +18,10 @@ export default function ConvertImages() {
   const handleChooseFileBtn = (event) => {
     hiddenFileInput.current.click();
   };
+  const handleFileInputChange = (e) => {
+    const fileToBeUploaded = e.target.files;
+    console.log(fileToBeUploaded);
+  };
   return (
     <section className="Images-converter-container">
       <Container>
@@ -58,6 +62,7 @@ export default function ConvertImages() {
                     className={styles.chooseFile_input}
                     placeholder="Choose file"
                     ref={hiddenFileInput}
+                    onChange={handleFileInputChange}
                   />
                   <p className="text-center mt-2">
                     Upload your image or drag and drop (max size 20 mb) You can
