@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import styles from "./Convert-Images.module.css";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -10,8 +11,22 @@ import { CgArrowsExchangeAlt } from "react-icons/cg";
 import Image from "next/image";
 import uploadImage from "../../public/assets/upload.svg";
 import ImageContainer from "../Image-Container/Image-Container";
+import { useDropzone } from "react-dropzone";
 
 export default function ConvertImages() {
+  const [files, setFiles] = useState([]);
+  const { getRootProps, getInputProps } = useDropzone({
+    accept: "image/*",
+    onDrop: (acceptedFiles) => {
+      setFiles(
+        acceptedFiles.map((file) =>
+          Object.assign(file, {
+            preview: URL.createObjectURL(file),
+          })
+        )
+      );
+    },
+  });
   return (
     <section className="Images-converter-container">
       <Container>
