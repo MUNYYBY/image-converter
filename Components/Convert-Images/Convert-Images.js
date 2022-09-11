@@ -14,6 +14,9 @@ import ImageContainer from "../Image-Container/Image-Container";
 import { useDropzone } from "react-dropzone";
 
 export default function ConvertImages() {
+  const [image, setImage] = useState(null);
+  const [createObjectURL, setCreateObjectURL] = useState(null);
+
   const hiddenFileInput = useRef(null);
   const handleChooseFileBtn = (event) => {
     hiddenFileInput.current.click();
@@ -21,9 +24,15 @@ export default function ConvertImages() {
   const handleFileInputChange = (e) => {
     const fileToBeUploaded = e.target.files;
     console.log(fileToBeUploaded);
+    if (e.target.files && e.target.files[0]) {
+      const t = e.target.files[0];
+      setImage(t);
+      setCreateObjectURL(URL.createObjectURL(t));
+    }
   };
   return (
     <section className="Images-converter-container">
+      <img src={createObjectURL} />
       <Container>
         <Row className="justify-content-center align-items-center py-5">
           <Col md={10} sm={10}>
