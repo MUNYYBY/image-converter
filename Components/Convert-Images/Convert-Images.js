@@ -14,6 +14,7 @@ import ImageContainer from "../Image-Container/Image-Container";
 import { useDropzone } from "react-dropzone";
 
 export default function ConvertImages() {
+  const [imagesToBeUploaded, setImagesToBeUploaded] = useState(null);
   const [image, setImage] = useState(null);
   const [createObjectURL, setCreateObjectURL] = useState(null);
 
