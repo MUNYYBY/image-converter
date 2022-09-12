@@ -19,6 +19,9 @@
 .btn-primary:hover {
   background-color: var(--Main-Color-Dimmed) !important;
 }
+.form-check-input[type="radio"] {
+  accent-color: var(--Main-Color) !important;
+}
 @font-face {
   font-family: "Manrope";
   src: url("../public/fonts/Manrope.ttf");
