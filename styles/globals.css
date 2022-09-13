@@ -1,9 +1,16 @@
+/* Start gLobal color variables */
+
 :root {
   --Main-Color: rgba(0, 255, 36, 1);
   --Font-Main-Color: rgba(0, 0, 0, 1);
   --Font-Main-Dimmed: rgba(107, 107, 107, 1);
   --Main-Color-Dimmed: rgba(0, 255, 36, 0.3);
 }
+
+/* End gLobal color variables */
+
+/* Start overriding defualt values of bootstrap */
+
 .btn-primary,
 .btn-primary:active,
 .btn-primary:visited {
@@ -11,27 +18,32 @@
   color: black !important;
   border: none !important;
   font-weight: 500 !important;
-  /* padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important; */
 }
 .btn-primary:hover {
   background-color: var(--Main-Color-Dimmed) !important;
 }
 input[type="radio"] {
-  /* appearance: none; */
 }
 
 input[type="radio"]:checked {
   background-color: var(--Main-Color);
   border-color: transparent;
 }
+
+/* End overriding defualt values of bootstrap */
+
+/* Start custom font */
+
 @font-face {
   font-family: "Manrope";
   src: url("../public/fonts/Manrope.ttf");
   font-style: normal;
 }
+
+/* End custom font */
+
+/* Start native tags customization */
+
 html,
 body {
   padding: 0;
@@ -49,3 +61,5 @@ a {
   margin: 0;
   box-sizing: border-box;
 }
+
+/* End native tags customization */
