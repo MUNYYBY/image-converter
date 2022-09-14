@@ -37,6 +37,7 @@ export default function ConvertImages() {
         fileArray.push(URL.createObjectURL(fileObj[0][i]));
       }
       setImagesToBeUploaded(fileArray);
+      console.log(fileArray);
     }
   };
   return (
