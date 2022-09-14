@@ -26,9 +26,14 @@ export default function ConvertImages() {
     const fileToBeUploaded = e.target.files;
     console.log(fileToBeUploaded);
     if (e.target.files && e.target.files[0]) {
-      const t = e.target.files[0];
-      setImage(t);
-      setCreateObjectURL(URL.createObjectURL(t));
+      const x = JSON.parse(e.target.files);
+      console.log(x);
+      // x.forEach((element) => {
+      //   console.log(element);
+      // });
+      // const t = e.target.files[0];
+      // setImage(t);
+      // setCreateObjectURL(URL.createObjectURL(t));
     }
   };
   return (
@@ -62,7 +67,7 @@ export default function ConvertImages() {
                 <div className="choose-files-container d-flex flex-column justify-content-center align-items-center w-75">
                   <Button
                     onClick={handleChooseFileBtn}
-                    className="d-flex flex-row justify-content-center align-items-center"
+                    className="d-flex flex-row justify-content-center align-items-center px-5"
                   >
                     <BiImageAdd size={50} color="black" />
                     <h4 className="m-0">Choose file</h4>
