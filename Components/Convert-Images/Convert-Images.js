@@ -44,7 +44,7 @@ export default function ConvertImages() {
     <section className="Images-converter-container">
       <img src={createObjectURL} />
       <Container>
-        <Row className="justify-content-center align-items-center py-5">
+        <Row className="justify-content-center align-items-center py-4">
           <Col md={10} sm={10}>
             <h1 className="text-center" style={{ fontWeight: 600 }}>
               Convert Images to any format of your like
