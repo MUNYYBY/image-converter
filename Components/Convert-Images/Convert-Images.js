@@ -18,6 +18,9 @@ export default function ConvertImages() {
   const [image, setImage] = useState(null);
   const [createObjectURL, setCreateObjectURL] = useState(null);
 
+  var fileObj = [];
+  var fileArray = [];
+
   const hiddenFileInput = useRef(null);
   const handleChooseFileBtn = (event) => {
     hiddenFileInput.current.click();
@@ -26,14 +29,14 @@ export default function ConvertImages() {
     const fileToBeUploaded = e.target.files;
     console.log(fileToBeUploaded);
     if (e.target.files && e.target.files[0]) {
-      const x = JSON.parse(e.target.files);
-      console.log(x);
-      // x.forEach((element) => {
-      //   console.log(element);
-      // });
       // const t = e.target.files[0];
       // setImage(t);
       // setCreateObjectURL(URL.createObjectURL(t));
+      fileObj.push(e.target.files);
+      for (let i = 0; i < fileObj[0].length; i++) {
+        fileArray.push(URL.createObjectURL(fileObj[0][i]));
+      }
+      setImagesToBeUploaded(fileArray);
     }
   };
   return (
