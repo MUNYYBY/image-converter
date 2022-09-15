@@ -26,6 +26,7 @@ export default function ImageContainer(props) {
               type="button"
               className="btn-close mb-0"
               aria-label="Close"
+              onClick={() => props.removeImage(props.imageUrl)}
             ></button>
           </div>
         </div>

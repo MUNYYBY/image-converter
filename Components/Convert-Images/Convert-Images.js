@@ -42,9 +42,15 @@ export default function ConvertImages() {
       console.log(filesToBeUploaded);
     }
   };
+  const removeImage = (key) => {
+    setImagesToBeUploaded(
+      imagesToBeUploaded.filter(function (image) {
+        return image.fileUrl !== key;
+      })
+    );
+  };
   useEffect(() => {
     console.log(imagesToBeUploaded);
-    console.log(typeof imagesToBeUploaded);
   }, [imagesToBeUploaded]);
   return (
     <section className="Images-converter-container">
@@ -104,10 +110,14 @@ export default function ConvertImages() {
               <div id={styles.ImagesContainerStack}>
                 {imagesToBeUploaded.map((image) => {
                   return (
-                    <ImageContainer
-                      imageName={image.name}
-                      imageSize={fileSize(image.filesize)}
-                    />
+                    <div>
+                      <ImageContainer
+                        imageName={image.name}
+                        imageSize={fileSize(image.filesize)}
+                        imageUrl={image.fileUrl}
+                        removeImage={removeImage}
+                      />
+                    </div>
                   );
                 })}
               </div>
