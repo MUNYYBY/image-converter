@@ -100,7 +100,7 @@ export default function ConvertImages() {
           </Col>
           {/* Start Image containers when user uploads images */}
           {imagesToBeUploaded ? (
-            <Col lg={8} md={10} sm={10} className="my-3">
+            <Col lg={8} md={10} sm={10} className="mt-3">
               <div id={styles.ImagesContainerStack}>
                 {imagesToBeUploaded.map((image) => {
                   return (
@@ -117,14 +117,17 @@ export default function ConvertImages() {
           )}
 
           {/* End Image containers when user uploads images */}
-          <Col lg={8} md={10} sm={10} className="my-2">
+          <Col lg={8} md={10} sm={10} className="my-4">
             <div className="d-flex flex-md-row flex-column justify-content-between align-items-center">
               <p className="me-md-4 mb-0 mb-sm-2 text-left fs-6">
                 <b>Note:</b> We only store you image for the life span of
                 coversion, when images are converted they are automatically
                 deleted from our database.
               </p>
-              <button className="btn btn-primary fs-4 d-flex flex-row justify-content-between align-items-center">
+              <button
+                disabled={imagesToBeUploaded ? false : true}
+                className="btn btn-primary fs-4 d-flex flex-row justify-content-between align-items-center"
+              >
                 {" "}
                 <CgArrowsExchangeAlt size={35} />
                 Convert
