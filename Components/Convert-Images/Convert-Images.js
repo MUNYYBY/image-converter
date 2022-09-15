@@ -15,8 +15,7 @@ import { useDropzone } from "react-dropzone";
 
 export default function ConvertImages() {
   const [imagesToBeUploaded, setImagesToBeUploaded] = useState(null);
-  const [image, setImage] = useState(null);
-  const [createObjectURL, setCreateObjectURL] = useState(null);
+  const [createObjectURL, setCreateObjectURL] = useState(null); // for image preview
 
   const hiddenFileInput = useRef(null);
   const handleChooseFileBtn = (event) => {
@@ -44,7 +43,7 @@ export default function ConvertImages() {
   }, [imagesToBeUploaded]);
   return (
     <section className="Images-converter-container">
-      <img src={createObjectURL} />
+      {/* <img src={createObjectURL} />*/}
       <Container>
         <Row className="justify-content-center align-items-center py-4">
           <Col md={10} sm={10}>
@@ -94,7 +93,7 @@ export default function ConvertImages() {
               </div>
             </div>
           </Col>
-          {/* Image containers when user uploads images */}
+          {/* Start Image containers when user uploads images */}
           <Col lg={8} md={10} sm={10} className="my-3">
             <div id={styles.ImagesContainerStack}>
               <ImageContainer
@@ -107,6 +106,7 @@ export default function ConvertImages() {
               />
             </div>
           </Col>
+          {/* End Image containers when user uploads images */}
           <Col lg={8} md={10} sm={10} className="my-2">
             <div className="d-flex flex-md-row flex-column justify-content-between align-items-center">
               <p className="me-md-4 mb-0 mb-sm-2 text-left fs-6">
