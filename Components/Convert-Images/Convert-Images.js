@@ -23,23 +23,27 @@ export default function ConvertImages() {
   };
   const handleFileInputChange = (e) => {
     var userInjectedFiles = []; // Initializaion for files initial injection
-    var fileToBeUploaded = []; // Initializaion for files final injection
+    var filesToBeUploaded = []; // Initializaion for files final injection
 
-    console.log(fileToBeUploaded);
+    console.log(filesToBeUploaded);
     if (e.target.files && e.target.files[0]) {
       userInjectedFiles.push(e.target.files);
       for (let i = 0; i < userInjectedFiles[0].length; i++) {
-        fileToBeUploaded.push({
-          fileUrl: URL.createObjectURL(userInjectedFiles[0][i]),
+        filesToBeUploaded.push({
+          name: userInjectedFiles[0][i].name,
+          type: userInjectedFiles[0][i].type,
+          lastModified: userInjectedFiles[0][i].lastModified,
           filesize: userInjectedFiles[0][i].size,
+          fileUrl: URL.createObjectURL(userInjectedFiles[0][i]),
         });
       }
-      setImagesToBeUploaded(fileToBeUploaded);
-      console.log(fileToBeUploaded);
+      setImagesToBeUploaded(filesToBeUploaded);
+      console.log(filesToBeUploaded);
     }
   };
   useEffect(() => {
     console.log(imagesToBeUploaded);
+    console.log(typeof imagesToBeUploaded);
   }, [imagesToBeUploaded]);
   return (
     <section className="Images-converter-container">
@@ -94,18 +98,23 @@ export default function ConvertImages() {
             </div>
           </Col>
           {/* Start Image containers when user uploads images */}
-          <Col lg={8} md={10} sm={10} className="my-3">
-            <div id={styles.ImagesContainerStack}>
-              <ImageContainer
-                imageName="Hello world.jpeg"
-                imageSize="322.53kb "
-              />
-              <ImageContainer
-                imageName="Hello world.jpeg"
-                imageSize="322.53kb "
-              />
-            </div>
-          </Col>
+          {imagesToBeUploaded ? (
+            <Col lg={8} md={10} sm={10} className="my-3">
+              <div id={styles.ImagesContainerStack}>
+                <ImageContainer
+                  imageName="Hello world.jpeg"
+                  imageSize="322.53kb "
+                />
+                <ImageContainer
+                  imageName="Hello world.jpeg"
+                  imageSize="322.53kb "
+                />
+              </div>
+            </Col>
+          ) : (
+            ""
+          )}
+
           {/* End Image containers when user uploads images */}
           <Col lg={8} md={10} sm={10} className="my-2">
             <div className="d-flex flex-md-row flex-column justify-content-between align-items-center">
