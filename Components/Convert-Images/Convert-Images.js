@@ -12,6 +12,7 @@ import Image from "next/image";
 import uploadImage from "../../public/assets/upload.svg";
 import ImageContainer from "../Image-Container/Image-Container";
 import { useDropzone } from "react-dropzone";
+import fileSize from "filesize";
 
 export default function ConvertImages() {
   const [imagesToBeUploaded, setImagesToBeUploaded] = useState(null);
@@ -105,7 +106,7 @@ export default function ConvertImages() {
                   return (
                     <ImageContainer
                       imageName={image.name}
-                      imageSize={image.filesize}
+                      imageSize={fileSize(image.filesize)}
                     />
                   );
                 })}
