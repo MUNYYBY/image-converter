@@ -29,9 +29,6 @@ export default function ConvertImages() {
     const fileToBeUploaded = e.target.files;
     console.log(fileToBeUploaded);
     if (e.target.files && e.target.files[0]) {
-      // const t = e.target.files[0];
-      // setImage(t);
-      // setCreateObjectURL(URL.createObjectURL(t));
       fileObj.push(e.target.files);
       for (let i = 0; i < fileObj[0].length; i++) {
         fileArray.push(URL.createObjectURL(fileObj[0][i]));
@@ -40,6 +37,9 @@ export default function ConvertImages() {
       console.log(fileArray);
     }
   };
+  useEffect(() => {
+    console.log(imagesToBeUploaded);
+  }, [imagesToBeUploaded]);
   return (
     <section className="Images-converter-container">
       <img src={createObjectURL} />
