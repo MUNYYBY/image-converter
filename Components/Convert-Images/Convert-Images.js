@@ -18,23 +18,25 @@ export default function ConvertImages() {
   const [image, setImage] = useState(null);
   const [createObjectURL, setCreateObjectURL] = useState(null);
 
-  var fileObj = [];
-  var fileArray = [];
-
   const hiddenFileInput = useRef(null);
   const handleChooseFileBtn = (event) => {
     hiddenFileInput.current.click();
   };
   const handleFileInputChange = (e) => {
-    const fileToBeUploaded = e.target.files;
+    var userInjectedFiles = []; // Initializaion for files initial injection
+    var fileToBeUploaded = []; // Initializaion for files final injection
+
     console.log(fileToBeUploaded);
     if (e.target.files && e.target.files[0]) {
-      fileObj.push(e.target.files);
-      for (let i = 0; i < fileObj[0].length; i++) {
-        fileArray.push(URL.createObjectURL(fileObj[0][i]));
+      userInjectedFiles.push(e.target.files);
+      for (let i = 0; i < userInjectedFiles[0].length; i++) {
+        fileToBeUploaded.push({
+          fileUrl: URL.createObjectURL(userInjectedFiles[0][i]),
+          filesize: userInjectedFiles[0][i].size,
+        });
       }
-      setImagesToBeUploaded(fileArray);
-      console.log(fileArray);
+      setImagesToBeUploaded(fileToBeUploaded);
+      console.log(fileToBeUploaded);
     }
   };
   useEffect(() => {
