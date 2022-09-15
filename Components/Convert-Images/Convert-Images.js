@@ -101,14 +101,14 @@ export default function ConvertImages() {
           {imagesToBeUploaded ? (
             <Col lg={8} md={10} sm={10} className="my-3">
               <div id={styles.ImagesContainerStack}>
-                <ImageContainer
-                  imageName="Hello world.jpeg"
-                  imageSize="322.53kb "
-                />
-                <ImageContainer
-                  imageName="Hello world.jpeg"
-                  imageSize="322.53kb "
-                />
+                {imagesToBeUploaded.map((image) => {
+                  return (
+                    <ImageContainer
+                      imageName={image.name}
+                      imageSize={image.filesize}
+                    />
+                  );
+                })}
               </div>
             </Col>
           ) : (
