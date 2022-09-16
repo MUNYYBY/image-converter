@@ -93,6 +93,7 @@ export default function ConvertImages() {
                   </Button>
                   <input
                     type="file"
+                    accept="image/*"
                     className={styles.chooseFile_input}
                     multiple={true}
                     placeholder="Choose file"
