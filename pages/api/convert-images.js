@@ -1,3 +1,3 @@
 export default async function handler(req, res) {
-  res.status(200).json("Upload images end point");
+  res.status(200).json("convert images end point");
 }
