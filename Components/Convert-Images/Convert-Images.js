@@ -18,6 +18,9 @@ export default function ConvertImages() {
   const [imagesToBeUploaded, setImagesToBeUploaded] = useState(null);
   const [createObjectURL, setCreateObjectURL] = useState(null); // for image preview
 
+  //States for parameters injection
+  const [imageQuality, setImageQuality] = useState("best");
+
   const hiddenFileInput = useRef(null);
   const handleChooseFileBtn = (event) => {
     hiddenFileInput.current.click();
@@ -135,7 +138,11 @@ export default function ConvertImages() {
                 deleted from our database.
               </p>
               <button
-                disabled={imagesToBeUploaded ? false : true}
+                disabled={
+                  imagesToBeUploaded && imagesToBeUploaded?.length > 0
+                    ? false
+                    : true
+                }
                 className="btn btn-primary fs-4 d-flex flex-row justify-content-between align-items-center"
               >
                 {" "}
@@ -157,6 +164,8 @@ export default function ConvertImages() {
                   type="radio"
                   name="QualityRadio1"
                   id="QualityRadio1"
+                  checked={imageQuality === "best"}
+                  onChange={() => setImageQuality("best")}
                 />
                 <label className="form-check-label" for="QualityRadio1">
                   <div className="formPanelContentContainer">
@@ -180,6 +189,8 @@ export default function ConvertImages() {
                   type="radio"
                   name="QualityRadio1"
                   id="QualityRadio2"
+                  checked={imageQuality === "small"}
+                  onChange={() => setImageQuality("small")}
                 />
                 <label className="form-check-label" for="QualityRadio2">
                   <div className="formPanelContentContainer">
