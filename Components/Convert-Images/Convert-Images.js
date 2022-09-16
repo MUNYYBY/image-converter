@@ -21,6 +21,17 @@ export default function ConvertImages() {
   //States for parameters injection
   const [imageQuality, setImageQuality] = useState("best");
 
+  //Accepted image types/formats
+  const IMAGE_TYPES = [
+    "image/gif",
+    "image/jpeg",
+    "image/png",
+    "image/svg+xml",
+    "image/tiff",
+    "image/webp",
+    "image/x-icon",
+  ];
+
   const hiddenFileInput = useRef(null);
   const handleChooseFileBtn = (event) => {
     hiddenFileInput.current.click();
@@ -93,7 +104,7 @@ export default function ConvertImages() {
                   </Button>
                   <input
                     type="file"
-                    accept="image/*"
+                    accept={IMAGE_TYPES}
                     className={styles.chooseFile_input}
                     multiple={true}
                     placeholder="Choose file"
