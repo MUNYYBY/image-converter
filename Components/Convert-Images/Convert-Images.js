@@ -48,8 +48,8 @@ export default function ConvertImages() {
           name: userInjectedFiles[0][i].name,
           type: userInjectedFiles[0][i].type,
           lastModified: userInjectedFiles[0][i].lastModified,
-          filesize: userInjectedFiles[0][i].size,
-          fileUrl: URL.createObjectURL(userInjectedFiles[0][i]),
+          size: userInjectedFiles[0][i].size,
+          url: URL.createObjectURL(userInjectedFiles[0][i]),
         });
       }
       setImagesToBeUploaded(filesToBeUploaded);
@@ -128,8 +128,8 @@ export default function ConvertImages() {
                     <div>
                       <ImageContainer
                         imageName={image.name}
-                        imageSize={fileSize(image.filesize)}
-                        imageUrl={image.fileUrl}
+                        imageSize={fileSize(image.size)}
+                        imageUrl={image.url}
                         removeImage={removeImage}
                       />
                     </div>
