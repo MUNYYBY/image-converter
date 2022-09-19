@@ -41,7 +41,7 @@ export default function Footer() {
                 <h4 className="text-uppercase">Tools</h4>
                 <ul className="list-unstyled">
                   <li>
-                    <Link href="/cx/image-converter">
+                    <Link href="/tools/image-converter">
                       <a className="link-dark text-decoration-none m-0">
                         Image Converter
                       </a>
