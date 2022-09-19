@@ -13,6 +13,7 @@
     "filesize": "^9.0.11",
     "formidable": "^2.0.1",
     "fs": "^0.0.1-security",
+    "jimp": "^0.16.2",
     "moment": "^2.29.4",
     "mutable": "^1.0.427",
     "next": "12.2.5",
