@@ -37,3 +37,8 @@ export default async function handler(req, res) {
     res.status(500).end(error.message);
   }
 }
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
