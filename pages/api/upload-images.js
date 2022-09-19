@@ -31,9 +31,9 @@ export default async function handler(req, res) {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
     }
-    const data = await new Promise(function (resolve, reject) {
-      // use formidable to get uploaded image and fields setting upload directory to the specified directory
-      // this saves the image with a uuid to the specified directory but with no extension
+    // const data = await new Promise(function (resolve, reject) {
+    // use formidable to get uploaded image and fields setting upload directory to the specified directory
+    // this saves the image with a uuid to the specified directory but with no extension
     //   const form = new formidable.IncomingForm({
     //     keepExtensions: true,
     //     uploadDir: dir,
