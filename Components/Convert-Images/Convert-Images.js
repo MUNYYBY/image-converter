@@ -179,7 +179,7 @@ export default function ConvertImages() {
                   checked={imageQuality === "best"}
                   onChange={() => setImageQuality("best")}
                 />
-                <label className="form-check-label" for="QualityRadio1">
+                <label className="form-check-label" htmlFor="QualityRadio1">
                   <div className="formPanelContentContainer">
                     <p className="fw-bold mb-0">Best Quality</p>
                     <p className="mb-0">Ideal for high resolution displays</p>
@@ -204,7 +204,7 @@ export default function ConvertImages() {
                   checked={imageQuality === "small"}
                   onChange={() => setImageQuality("small")}
                 />
-                <label className="form-check-label" for="QualityRadio2">
+                <label className="form-check-label" htmlFor="QualityRadio2">
                   <div className="formPanelContentContainer">
                     <p className="fw-bold mb-0">Small Quality</p>
                     <p className="mb-0">Ideal for display photos & uploading</p>
