@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     res.status(405).json({ error: `Method '${req.method}' not allowed! ❌` });
   }
   try {
-    let fileNames = null;
+    let newFileName = null;
 
     //Relative directories
     const rootDir = "/public/assets";
@@ -31,7 +31,22 @@ export default async function handler(req, res) {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
     }
+    const data = await new Promise(function (resolve, reject) {
+      // use formidable to get uploaded image and fields setting upload directory to the specified directory
+      // this saves the image with a uuid to the specified directory but with no extension
+      const form = new formidable.IncomingForm({
+        keepExtensions: true,
+        uploadDir: dir,
+      });
+      form.keepExtensions = true;
 
+      form.parse(req, async function (err, fields, files) {
+        if (err) return reject(err);
+        newFileName = files["image"].newFilename;
+        resolve({ fields, files });
+      });
+    });
+    console.log(data.files["image"].filepath);
     res.status(200).json(dir);
   } catch (error) {
     res.status(500).end(error.message);
