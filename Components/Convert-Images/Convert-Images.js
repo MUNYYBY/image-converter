@@ -69,7 +69,6 @@ export default function ConvertImages() {
   const uplaodImage = async () => {
     for (var i = 0; i < imagesToBeUploaded.length; i++) {
       const IMAGE = imagesToBeUploaded[i].file;
-      console.log("hello", IMAGE);
       const formData = new FormData();
       formData.append("image", IMAGE);
       let res = await axios.post("/api/upload-images", formData, {
@@ -82,9 +81,6 @@ export default function ConvertImages() {
       });
     }
   };
-  useEffect(() => {
-    console.log(imagesToBeUploaded);
-  }, [imagesToBeUploaded]);
   return (
     <section className="Images-converter-container">
       {/* <img src={createObjectURL} />*/}
