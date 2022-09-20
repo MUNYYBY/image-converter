@@ -27,6 +27,7 @@ export default async function handler(req, res) {
 
     // directory for saving images
     let dir = serverPath(rootDir);
+    console.log(dir);
 
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
