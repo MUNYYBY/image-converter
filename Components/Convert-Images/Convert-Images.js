@@ -50,6 +50,7 @@ export default function ConvertImages() {
           lastModified: userInjectedFiles[0][i].lastModified,
           size: userInjectedFiles[0][i].size,
           url: URL.createObjectURL(userInjectedFiles[0][i]),
+          uploadProgress: 0,
         });
       }
       setImagesToBeUploaded(filesToBeUploaded);
@@ -64,9 +65,10 @@ export default function ConvertImages() {
     );
   };
   const uplaodImage = () => {
-    for (var i = 0; i < imagesToBeUploaded.length; i++) {
-      console.log(imagesToBeUploaded[i]);
-    }
+    // const IMAGE = imagesToBeUploaded[i];
+    // const formData = new FormData();
+    // formData.append("image", IMAGE);
+    for (var i = 0; i < imagesToBeUploaded.length; i++) {}
   };
   useEffect(() => {
     console.log(imagesToBeUploaded);

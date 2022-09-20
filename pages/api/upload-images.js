@@ -45,6 +45,7 @@ export default async function handler(req, res) {
         if (err) return reject(err);
         newFileName = files["image"].newFilename;
         console.log(newFileName);
+        cc;
         resolve({ fields, files });
       });
     });
