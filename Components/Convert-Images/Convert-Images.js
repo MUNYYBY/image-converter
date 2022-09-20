@@ -59,9 +59,14 @@ export default function ConvertImages() {
   const removeImage = (key) => {
     setImagesToBeUploaded(
       imagesToBeUploaded.filter(function (image) {
-        return image.fileUrl !== key;
+        return image.url !== key;
       })
     );
+  };
+  const uplaodImage = () => {
+    for (var i = 0; i < imagesToBeUploaded.length; i++) {
+      console.log(imagesToBeUploaded[i]);
+    }
   };
   useEffect(() => {
     console.log(imagesToBeUploaded);
@@ -155,6 +160,7 @@ export default function ConvertImages() {
                     ? false
                     : true
                 }
+                onClick={uplaodImage}
                 className="btn btn-primary fs-4 d-flex flex-row justify-content-between align-items-center"
               >
                 {" "}
