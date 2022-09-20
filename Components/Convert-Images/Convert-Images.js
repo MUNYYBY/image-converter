@@ -13,6 +13,7 @@ import uploadImage from "../../public/assets/upload.svg";
 import ImageContainer from "../Image-Container/Image-Container";
 import { useDropzone } from "react-dropzone";
 import fileSize from "filesize";
+import axios from "axios";
 
 export default function ConvertImages() {
   const [imagesToBeUploaded, setImagesToBeUploaded] = useState(null);
@@ -64,11 +65,19 @@ export default function ConvertImages() {
       })
     );
   };
-  const uplaodImage = () => {
-    // const IMAGE = imagesToBeUploaded[i];
-    // const formData = new FormData();
-    // formData.append("image", IMAGE);
+  const uplaodImage = async () => {
     for (var i = 0; i < imagesToBeUploaded.length; i++) {}
+    const IMAGE = imagesToBeUploaded[i];
+    const formData = new FormData();
+    formData.append("image", IMAGE);
+    let res = await axios.post("/api/upload-images", formData, {
+      onUploadProgress: function (progressEvent) {
+        const uploadProgressCompleted = Math.round(
+          (progressEvent.loaded * 100) / progressEvent.total
+        );
+        console.log(uploadProgressCompleted);
+      },
+    });
   };
   useEffect(() => {
     console.log(imagesToBeUploaded);
