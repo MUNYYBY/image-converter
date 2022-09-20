@@ -44,13 +44,9 @@ export default async function handler(req, res) {
       form.parse(req, async function (err, fields, files) {
         if (err) return reject(err);
         newFileName = files["image"].newFilename;
-        console.log("New file Name: ", newFileName);
-        console.log(JSON.stringify(files));
-        console.log(Object.values(fields));
         resolve({ fields, files });
       });
     });
-    // console.log(data.files['image'].filepath)
     res.status(200).json(dir);
   } catch (error) {
     res.status(500).end(error.message);
