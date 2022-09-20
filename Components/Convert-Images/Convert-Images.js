@@ -51,6 +51,7 @@ export default function ConvertImages() {
           lastModified: userInjectedFiles[0][i].lastModified,
           size: userInjectedFiles[0][i].size,
           url: URL.createObjectURL(userInjectedFiles[0][i]),
+          file: userInjectedFiles[0][i],
           uploadProgress: 0,
         });
       }
@@ -66,18 +67,20 @@ export default function ConvertImages() {
     );
   };
   const uplaodImage = async () => {
-    for (var i = 0; i < imagesToBeUploaded.length; i++) {}
-    const IMAGE = imagesToBeUploaded[i];
-    const formData = new FormData();
-    formData.append("image", IMAGE);
-    let res = await axios.post("/api/upload-images", formData, {
-      onUploadProgress: function (progressEvent) {
-        const uploadProgressCompleted = Math.round(
-          (progressEvent.loaded * 100) / progressEvent.total
-        );
-        console.log(uploadProgressCompleted);
-      },
-    });
+    for (var i = 0; i < imagesToBeUploaded.length; i++) {
+      const IMAGE = imagesToBeUploaded[i].file;
+      console.log("hello", IMAGE);
+      const formData = new FormData();
+      formData.append("image", IMAGE);
+      let res = await axios.post("/api/upload-images", formData, {
+        onUploadProgress: function (progressEvent) {
+          const uploadProgressCompleted = Math.round(
+            (progressEvent.loaded * 100) / progressEvent.total
+          );
+          console.log(uploadProgressCompleted);
+        },
+      });
+    }
   };
   useEffect(() => {
     console.log(imagesToBeUploaded);
