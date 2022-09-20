@@ -40,7 +40,7 @@ export default async function handler(req, res) {
         uploadDir: dir,
       });
       form.keepExtensions = true;
-
+      //Save image coming from req
       form.parse(req, async function (err, fields, files) {
         if (err) return reject(err);
         newFileName = files["image"].newFilename;
