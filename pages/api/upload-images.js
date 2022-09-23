@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     let newFileName = null;
 
     //Relative directories
-    const rootDir = "/public/assets";
+    const rootDir = "/public/assets/uploads";
 
     // directory for saving images
     let dir = serverPath(rootDir);
