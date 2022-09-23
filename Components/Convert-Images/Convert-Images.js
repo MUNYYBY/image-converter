@@ -54,7 +54,7 @@ export default function ConvertImages() {
           size: userInjectedFiles[0][i].size,
           url: URL.createObjectURL(userInjectedFiles[0][i]),
           file: userInjectedFiles[0][i],
-          uploadProgress: 0,
+          uploadProgress: null,
           uploadError: null,
           uploadFileName: null,
           uploadedTime: null,
@@ -83,6 +83,13 @@ export default function ConvertImages() {
             (progressEvent.loaded * 100) / progressEvent.total
           );
           console.log(uploadProgressCompleted);
+          let tempValue = [...imagesToBeUploaded];
+          tempValue[i] = {
+            ...tempValue[i],
+            uploadProgress: uploadProgressCompleted,
+          };
+          setImagesToBeUploaded(tempValue);
+          console.log("Hello", tempValue);
         },
       });
     }
@@ -152,6 +159,7 @@ export default function ConvertImages() {
                         imageSize={fileSize(image.size)}
                         imageUrl={image.url}
                         removeImage={removeImage}
+                        uploadProgress={image.uploadProgress}
                       />
                     </div>
                   );

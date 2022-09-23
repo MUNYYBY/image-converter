@@ -1,5 +1,6 @@
 import styles from "./Image-Container.module.css";
 import { AiOutlineFileImage } from "react-icons/ai";
+import { useEffect } from "react";
 export default function ImageContainer(props) {
   return (
     <div
