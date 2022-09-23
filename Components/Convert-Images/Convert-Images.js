@@ -22,6 +22,9 @@ export default function ConvertImages() {
   //States for parameters injection
   const [imageQuality, setImageQuality] = useState("best");
 
+  //State to check Coversion status
+  const [conversionPhases, setConversionPhases] = useState("Upload");
+
   //Accepted image types/formats
   const IMAGE_TYPES = [
     "image/gif",
@@ -66,6 +69,7 @@ export default function ConvertImages() {
     }
   };
   const uplaodImage = async () => {
+    setConversionPhases("Uploading");
     for (var i = 0; i < imagesToBeUploaded.length; i++) {
       const IMAGE = imagesToBeUploaded[i].file;
       const formData = new FormData();
@@ -85,10 +89,13 @@ export default function ConvertImages() {
             setImagesToBeUploaded(tempValue);
           },
         });
+        if (i == imagesToBeUploaded.length - 1) {
+        }
       } catch (error) {
         console.log(error);
       }
     }
+    setConversionPhases("Convert");
   };
   const removeImage = (key) => {
     setImagesToBeUploaded(
@@ -98,12 +105,12 @@ export default function ConvertImages() {
     );
   };
 
-  useEffect(() => {
-    if (imagesToBeUploaded?.length > 0) {
-      console.log(imagesToBeUploaded);
-      uplaodImage();
-    }
-  }, [imagesToBeUploaded?.length]);
+  // useEffect(() => {
+  //   if (imagesToBeUploaded?.length > 0) {
+  //     console.log(imagesToBeUploaded);
+  //     uplaodImage();
+  //   }
+  // }, [imagesToBeUploaded?.length]);
 
   return (
     <section className="Images-converter-container">
@@ -191,16 +198,16 @@ export default function ConvertImages() {
               </p>
               <button
                 disabled={
-                  imagesToBeUploaded && imagesToBeUploaded?.length > 0
+                  imagesToBeUploaded && conversionPhases != "Uploading"
                     ? false
                     : true
                 }
-                // onClick={uplaodImage}
+                onClick={uplaodImage}
                 className="btn btn-primary fs-4 d-flex flex-row justify-content-between align-items-center"
               >
                 {" "}
                 <CgArrowsExchangeAlt size={35} />
-                Convert
+                {conversionPhases}
               </button>
             </div>
           </Col>

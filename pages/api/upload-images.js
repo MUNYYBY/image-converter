@@ -48,7 +48,7 @@ export default async function handler(req, res) {
         resolve({ fields, files });
       });
     });
-    res.status(200).json(dir);
+    res.status(200).json(dir + newFileName);
   } catch (error) {
     res.status(500).end(error.message);
   }
