@@ -88,7 +88,6 @@ export default function ConvertImages() {
       }
       setImagesToBeUploaded(filesToBeUploaded);
       console.log(filesToBeUploaded);
-      uplaodImage();
     }
   };
   const removeImage = (key) => {
@@ -98,6 +97,12 @@ export default function ConvertImages() {
       })
     );
   };
+
+  useEffect(() => {
+    if (imagesToBeUploaded?.length > 0) {
+      uplaodImage();
+    }
+  }, [imagesToBeUploaded?.length]);
 
   return (
     <section className="Images-converter-container">
