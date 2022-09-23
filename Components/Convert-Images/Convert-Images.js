@@ -39,31 +39,6 @@ export default function ConvertImages() {
   const handleChooseFileBtn = (event) => {
     hiddenFileInput.current.click();
   };
-  const uplaodImage = async () => {
-    for (var i = 0; i < imagesToBeUploaded.length; i++) {
-      const IMAGE = imagesToBeUploaded[i].file;
-      const formData = new FormData();
-      formData.append("image", IMAGE);
-      try {
-        let res = await axios.post("/api/upload-images", formData, {
-          onUploadProgress: function (progressEvent) {
-            const uploadProgressCompleted = Math.round(
-              (progressEvent.loaded * 100) / progressEvent.total
-            );
-            console.log(uploadProgressCompleted);
-            let tempValue = [...imagesToBeUploaded];
-            tempValue[i] = {
-              ...tempValue[i],
-              uploadProgress: uploadProgressCompleted,
-            };
-            setImagesToBeUploaded(tempValue);
-          },
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    }
-  };
   const handleFileInputChange = (e) => {
     var userInjectedFiles = []; // Initializaion for files initial injection
     var filesToBeUploaded = []; // Initializaion for files final injection
@@ -90,6 +65,31 @@ export default function ConvertImages() {
       console.log(filesToBeUploaded);
     }
   };
+  const uplaodImage = async () => {
+    for (var i = 0; i < imagesToBeUploaded.length; i++) {
+      const IMAGE = imagesToBeUploaded[i].file;
+      const formData = new FormData();
+      formData.append("image", IMAGE);
+      try {
+        let res = await axios.post("/api/upload-images", formData, {
+          onUploadProgress: function (progressEvent) {
+            const uploadProgressCompleted = Math.round(
+              (progressEvent.loaded * 100) / progressEvent.total
+            );
+            console.log(uploadProgressCompleted);
+            let tempValue = [...imagesToBeUploaded];
+            tempValue[i] = {
+              ...tempValue[i],
+              uploadProgress: uploadProgressCompleted,
+            };
+            setImagesToBeUploaded(tempValue);
+          },
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
   const removeImage = (key) => {
     setImagesToBeUploaded(
       imagesToBeUploaded.filter(function (image) {
@@ -100,6 +100,7 @@ export default function ConvertImages() {
 
   useEffect(() => {
     if (imagesToBeUploaded?.length > 0) {
+      console.log(imagesToBeUploaded);
       uplaodImage();
     }
   }, [imagesToBeUploaded?.length]);
