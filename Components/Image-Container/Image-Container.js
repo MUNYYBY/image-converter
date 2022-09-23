@@ -2,6 +2,9 @@ import styles from "./Image-Container.module.css";
 import { AiOutlineFileImage } from "react-icons/ai";
 import { useEffect } from "react";
 export default function ImageContainer(props) {
+  //   useEffect(() => {
+  //     console.log("PROPS: ", props.uploadProgress);
+  //   }, [props.uploadProgress]);
   return (
     <div
       id={styles.ImageContainer}
@@ -32,6 +35,7 @@ export default function ImageContainer(props) {
           </div>
         </div>
       </div>
+      {props.uploadProgress ? <div className="w-100"></div> : ""}
     </div>
   );
 }
