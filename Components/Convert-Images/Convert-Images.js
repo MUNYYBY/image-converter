@@ -69,6 +69,9 @@ export default function ConvertImages() {
     }
   };
   const uplaodImage = async () => {
+    if (imagesToBeUploaded.length == 0) {
+      return false;
+    }
     setConversionPhases("Uploading");
     for (var i = 0; i < imagesToBeUploaded.length; i++) {
       const IMAGE = imagesToBeUploaded[i].file;
@@ -97,6 +100,10 @@ export default function ConvertImages() {
     }
     setConversionPhases("Convert");
   };
+  const convertImages = () => {
+    console.log("Conversion Initiated");
+    setConversionPhases("Converting...");
+  };
   const removeImage = (key) => {
     setImagesToBeUploaded(
       imagesToBeUploaded.filter(function (image) {
@@ -104,13 +111,19 @@ export default function ConvertImages() {
       })
     );
   };
+  const StartConversion = () => {
+    if (conversionPhases == "Upload") {
+      uplaodImage();
+    } else {
+      convertImages();
+    }
+  };
 
-  // useEffect(() => {
-  //   if (imagesToBeUploaded?.length > 0) {
-  //     console.log(imagesToBeUploaded);
-  //     uplaodImage();
-  //   }
-  // }, [imagesToBeUploaded?.length]);
+  useEffect(() => {
+    if (imagesToBeUploaded?.length == 0) {
+      setConversionPhases("Upload");
+    }
+  }, [imagesToBeUploaded]);
 
   return (
     <section className="Images-converter-container">
@@ -198,11 +211,14 @@ export default function ConvertImages() {
               </p>
               <button
                 disabled={
-                  imagesToBeUploaded && conversionPhases != "Uploading"
+                  imagesToBeUploaded &&
+                  imagesToBeUploaded?.length > 0 &&
+                  conversionPhases != "Uploading" &&
+                  conversionPhases != "Converting..."
                     ? false
                     : true
                 }
-                onClick={uplaodImage}
+                onClick={StartConversion}
                 className="btn btn-primary fs-4 d-flex flex-row justify-content-between align-items-center"
               >
                 {" "}
