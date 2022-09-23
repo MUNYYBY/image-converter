@@ -7,7 +7,7 @@ export default function ImageContainer(props) {
   //   }, [props.uploadProgress]);
   return (
     <div id={styles.ImageContainer} className="bg-body w-100 rounded shadow">
-      <div className="p-3 my-2">
+      <div className="p-3 my-2" style={{ zIndex: 1, position: "relative" }}>
         <div className="d-flex flex-row justify-content-between align-items-center">
           <div className="d-flex flex-row justify-content-center align-items-center">
             <AiOutlineFileImage size={32} />
@@ -39,15 +39,15 @@ export default function ImageContainer(props) {
           <div
             style={{
               position: "absolute",
-              top: -50,
+              top: -75,
               left: 0,
-              height: "100%",
-              width: "",
+              height: "67px",
+              width: props.uploadProgress + "%",
               backgroundColor: "rgba(0,255,36,0.5)",
+              borderRadius: "5px",
+              zIndex: 0,
             }}
-          >
-            hello
-          </div>
+          ></div>
         </div>
       ) : (
         ""
