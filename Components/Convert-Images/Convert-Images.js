@@ -31,6 +31,8 @@ export default function ConvertImages() {
     "image/tiff",
     "image/webp",
     "image/x-icon",
+    "image/webp",
+    "image/jpg",
   ];
 
   const hiddenFileInput = useRef(null);
