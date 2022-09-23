@@ -1,12 +1,14 @@
 console.debug("Job Schedular Started!!!");
 
-const bree = require("bree");
+const Bree = require("bree");
+const clearStorage = require("./clearStorage.js");
 
-const bree = new bree({
+const bree = new Bree({
   jobs: [
     {
-      name: "Clear images from storage",
+      name: "clearStorage",
       interval: "1min",
+      path: clearStorage,
     },
   ],
 });
