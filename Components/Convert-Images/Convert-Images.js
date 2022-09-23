@@ -39,39 +39,6 @@ export default function ConvertImages() {
   const handleChooseFileBtn = (event) => {
     hiddenFileInput.current.click();
   };
-  const handleFileInputChange = (e) => {
-    var userInjectedFiles = []; // Initializaion for files initial injection
-    var filesToBeUploaded = []; // Initializaion for files final injection
-
-    console.log(filesToBeUploaded);
-    if (e.target.files && e.target.files[0]) {
-      userInjectedFiles.push(e.target.files);
-      for (let i = 0; i < userInjectedFiles[0].length; i++) {
-        filesToBeUploaded.push({
-          name: userInjectedFiles[0][i].name,
-          type: userInjectedFiles[0][i].type,
-          lastModified: userInjectedFiles[0][i].lastModified,
-          size: userInjectedFiles[0][i].size,
-          url: URL.createObjectURL(userInjectedFiles[0][i]),
-          file: userInjectedFiles[0][i],
-          uploadProgress: null,
-          uploadError: null,
-          uploadFileName: null,
-          uploadedTime: null,
-          isConverted: false,
-        });
-      }
-      setImagesToBeUploaded(filesToBeUploaded);
-      console.log(filesToBeUploaded);
-    }
-  };
-  const removeImage = (key) => {
-    setImagesToBeUploaded(
-      imagesToBeUploaded.filter(function (image) {
-        return image.url !== key;
-      })
-    );
-  };
   const uplaodImage = async () => {
     for (var i = 0; i < imagesToBeUploaded.length; i++) {
       const IMAGE = imagesToBeUploaded[i].file;
@@ -97,6 +64,41 @@ export default function ConvertImages() {
       }
     }
   };
+  const handleFileInputChange = (e) => {
+    var userInjectedFiles = []; // Initializaion for files initial injection
+    var filesToBeUploaded = []; // Initializaion for files final injection
+
+    console.log(filesToBeUploaded);
+    if (e.target.files && e.target.files[0]) {
+      userInjectedFiles.push(e.target.files);
+      for (let i = 0; i < userInjectedFiles[0].length; i++) {
+        filesToBeUploaded.push({
+          name: userInjectedFiles[0][i].name,
+          type: userInjectedFiles[0][i].type,
+          lastModified: userInjectedFiles[0][i].lastModified,
+          size: userInjectedFiles[0][i].size,
+          url: URL.createObjectURL(userInjectedFiles[0][i]),
+          file: userInjectedFiles[0][i],
+          uploadProgress: null,
+          uploadError: null,
+          uploadFileName: null,
+          uploadedTime: null,
+          isConverted: false,
+        });
+      }
+      setImagesToBeUploaded(filesToBeUploaded);
+      console.log(filesToBeUploaded);
+      uplaodImage();
+    }
+  };
+  const removeImage = (key) => {
+    setImagesToBeUploaded(
+      imagesToBeUploaded.filter(function (image) {
+        return image.url !== key;
+      })
+    );
+  };
+
   return (
     <section className="Images-converter-container">
       {/* <img src={createObjectURL} />*/}
@@ -187,7 +189,7 @@ export default function ConvertImages() {
                     ? false
                     : true
                 }
-                onClick={uplaodImage}
+                // onClick={uplaodImage}
                 className="btn btn-primary fs-4 d-flex flex-row justify-content-between align-items-center"
               >
                 {" "}
