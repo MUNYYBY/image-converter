@@ -89,7 +89,6 @@ export default function ConvertImages() {
             uploadProgress: uploadProgressCompleted,
           };
           setImagesToBeUploaded(tempValue);
-          console.log("Hello", tempValue);
         },
       });
     }
