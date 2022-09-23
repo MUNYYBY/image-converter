@@ -55,6 +55,10 @@ export default function ConvertImages() {
           url: URL.createObjectURL(userInjectedFiles[0][i]),
           file: userInjectedFiles[0][i],
           uploadProgress: 0,
+          uploadError: null,
+          uploadFileName: null,
+          uploadedTime: null,
+          isConverted: false,
         });
       }
       setImagesToBeUploaded(filesToBeUploaded);
