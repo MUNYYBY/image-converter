@@ -3,7 +3,14 @@ import { AiOutlineFileImage } from "react-icons/ai";
 import { useEffect } from "react";
 export default function ImageContainer(props) {
   return (
-    <div id={styles.ImageContainer} className="bg-body w-100 rounded shadow">
+    <div
+      id={styles.ImageContainer}
+      className="bg-body w-100 rounded shadow"
+      style={{
+        border:
+          props.uploadProgress == 100 ? "2px solid var(--Main-Color)" : "",
+      }}
+    >
       <div className="p-3 my-2" style={{ zIndex: 1, position: "relative" }}>
         <div className="d-flex flex-row justify-content-between align-items-center">
           <div className="d-flex flex-row justify-content-center align-items-center">
@@ -40,7 +47,8 @@ export default function ImageContainer(props) {
               left: 0,
               height: "67px",
               width: props.uploadProgress + "%",
-              backgroundColor: "rgba(0,255,36,0.5)",
+              backgroundColor:
+                props.uploadProgress < 100 ? "rgba(0,255,36,0.5)" : "",
               borderRadius: "5px",
               zIndex: 0,
             }}
