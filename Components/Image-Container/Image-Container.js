@@ -2,9 +2,6 @@ import styles from "./Image-Container.module.css";
 import { AiOutlineFileImage } from "react-icons/ai";
 import { useEffect } from "react";
 export default function ImageContainer(props) {
-  //   useEffect(() => {
-  //     console.log("PROPS: ", props.uploadProgress);
-  //   }, [props.uploadProgress]);
   return (
     <div id={styles.ImageContainer} className="bg-body w-100 rounded shadow">
       <div className="p-3 my-2" style={{ zIndex: 1, position: "relative" }}>
