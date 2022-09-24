@@ -5,7 +5,7 @@
 module.exports = async function clearStorage() {
   const fs = require("fs");
   const path = require("path");
-
+  const moment = require("moment");
   const rootDir = "./public/assets/uploads";
 
   let d = new Date();
@@ -28,9 +28,23 @@ module.exports = async function clearStorage() {
           if (err) {
             console.log("Error in showing stats: ", err);
           } else {
-            let last15MinsDate = d.toISOString();
+            const minsAgo = new Date(d.getTime() - 1000 * 60 * 15);
+            if (stats.ctime <= minsAgo) {
+              console.log(
+                "Deleted ❌: ",
+                file,
+                ", ",
+                moment(stats.ctime).fromNow()
+              );
+            } else {
+              console.log(
+                "Not to delete: ",
+                file,
+                ", ",
+                moment(stats.ctime).fromNow()
+              );
+            }
           }
-          console.log(fileObj);
         });
       });
     }
