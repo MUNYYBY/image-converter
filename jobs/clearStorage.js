@@ -30,19 +30,10 @@ module.exports = async function clearStorage() {
           } else {
             const minsAgo = new Date(d.getTime() - 1000 * 60 * 15);
             if (stats.ctime <= minsAgo) {
-              console.log(
-                "Deleted ❌: ",
-                file,
-                ", ",
-                moment(stats.ctime).fromNow()
-              );
+              fs.unlinkSync(dir + `/${file}`);
+              console.log("❌: ", file, ", ", moment(stats.ctime).fromNow());
             } else {
-              console.log(
-                "Not to delete: ",
-                file,
-                ", ",
-                moment(stats.ctime).fromNow()
-              );
+              console.log("✅: ", file, ", ", moment(stats.ctime).fromNow());
             }
           }
         });
