@@ -15,31 +15,30 @@ module.exports = async function clearStorage() {
 
   let filesInfo = [];
 
-  fs.readdir(dir, function (err, files) {
-    if (err) {
-      console.log("Error getting directory information.", err);
-    } else {
-      files.forEach(function (file) {
-        const fileObj = {
-          name: file,
-          date: "",
-        };
-        fs.stat(dir + `/${file}`, function (err, stats) {
-          if (err) {
-            console.log("Error in showing stats: ", err);
-          } else {
-            const minsAgo = new Date(d.getTime() - 1000 * 60 * 15);
-            if (stats.ctime <= minsAgo) {
-              fs.unlinkSync(dir + `/${file}`);
-              console.log("❌: ", file, ", ", moment(stats.ctime).fromNow());
+  try {
+    fs.readdir(dir, function (err, files) {
+      if (err) {
+        console.log("Error getting directory information.", err);
+      } else {
+        console.log("CLEARING STORAGE...");
+        files.forEach(function (file) {
+          fs.stat(dir + `/${file}`, function (err, stats) {
+            if (err) {
+              console.log("Error in showing stats: ", err);
             } else {
-              console.log("✅: ", file, ", ", moment(stats.ctime).fromNow());
+              const minsAgo = new Date(d.getTime() - 1000 * 60 * 15);
+              if (stats.ctime <= minsAgo) {
+                fs.unlinkSync(dir + `/${file}`);
+                console.log("❌: ", file, ", ", moment(stats.ctime).fromNow());
+              } else {
+                console.log("✅: ", file, ", ", moment(stats.ctime).fromNow());
+              }
             }
-          }
+          });
         });
-      });
-    }
-  });
-  console.log("Clear storage: ", dir);
-  console.log(filesInfo);
+      }
+    });
+  } catch (error) {
+    console.log("❌ Error occured file clearing storage: ", error);
+  }
 };
