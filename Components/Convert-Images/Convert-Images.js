@@ -60,7 +60,7 @@ export default function ConvertImages() {
           uploadProgress: null,
           uploadError: null,
           uploadUrl: null,
-          uploadedTime: null,
+          uploadTime: null,
           isConverted: false,
         });
       }
@@ -93,6 +93,13 @@ export default function ConvertImages() {
           },
         });
         console.log(res);
+        let tempValue = [...imagesToBeUploaded];
+        tempValue[i] = {
+          ...tempValue[i],
+          uploadUrl: res.data.imagePath,
+          uploadTime: res.data.uploadTime,
+        };
+        setImagesToBeUploaded(tempValue);
       } catch (error) {
         console.log("❌ Error while posting image: ", error);
         let tempValue = [...imagesToBeUploaded];
