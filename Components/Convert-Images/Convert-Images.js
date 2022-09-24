@@ -59,7 +59,7 @@ export default function ConvertImages() {
           file: userInjectedFiles[0][i],
           uploadProgress: null,
           uploadError: null,
-          uploadFileName: null,
+          uploadUrl: null,
           uploadedTime: null,
           isConverted: false,
         });
@@ -92,8 +92,9 @@ export default function ConvertImages() {
             setImagesToBeUploaded(tempValue);
           },
         });
+        console.log(res);
       } catch (error) {
-        console.log(error);
+        console.log("❌ Error while posting image: ", error);
         let tempValue = [...imagesToBeUploaded];
         tempValue[i] = {
           ...tempValue[i],

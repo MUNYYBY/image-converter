@@ -27,7 +27,6 @@ export default async function handler(req, res) {
 
     // directory for saving images
     let dir = serverPath(rootDir);
-    console.log(dir);
 
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
@@ -48,8 +47,10 @@ export default async function handler(req, res) {
         resolve({ fields, files });
       });
     });
-    res.status(200).json(dir + newFileName);
+    const apiResponse = path.join(dir, newFileName);
+    res.status(200).json(apiResponse);
   } catch (error) {
+    console.log(error);
     res.status(500).end(error.message);
   }
 }
