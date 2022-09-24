@@ -51,7 +51,7 @@ export default async function handler(req, res) {
     });
     const apiResponse = {
       imagePath: path.join(dir, newFileName),
-      uploadedTime: d,
+      uploadTime: d,
     };
     res.status(200).json(apiResponse);
   } catch (error) {
