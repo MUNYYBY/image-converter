@@ -7,7 +7,7 @@ const bree = new Bree({
   jobs: [
     {
       name: "clearStorage",
-      interval: "1min",
+      interval: "10s",
       path: clearStorage,
     },
   ],

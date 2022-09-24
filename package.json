@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently --kill-others \"node ./jobs/bree.js\" \"next dev\"",
+    "dev": "concurrently --kill-others \"nodemon ./jobs/bree.js\" \"next dev\"",
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint"
@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "eslint": "8.23.0",
-    "eslint-config-next": "12.2.5"
+    "eslint-config-next": "12.2.5",
+    "nodemon": "^2.0.20"
   }
 }
