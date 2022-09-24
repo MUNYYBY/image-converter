@@ -92,10 +92,14 @@ export default function ConvertImages() {
             setImagesToBeUploaded(tempValue);
           },
         });
-        if (i == imagesToBeUploaded.length - 1) {
-        }
       } catch (error) {
         console.log(error);
+        let tempValue = [...imagesToBeUploaded];
+        tempValue[i] = {
+          ...tempValue[i],
+          uploadError: true,
+        };
+        setImagesToBeUploaded(tempValue);
       }
     }
     setConversionPhases("Convert");
@@ -191,6 +195,7 @@ export default function ConvertImages() {
                         imageUrl={image.url}
                         removeImage={removeImage}
                         uploadProgress={image.uploadProgress}
+                        uploadError={image.uploadError}
                       />
                     </div>
                   );

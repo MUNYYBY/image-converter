@@ -46,9 +46,14 @@ export default function ImageContainer(props) {
               top: -75,
               left: 0,
               height: "67px",
-              width: props.uploadProgress + "%",
+              width:
+                props.uploadError == true ? "100%" : props.uploadProgress + "%",
               backgroundColor:
-                props.uploadProgress < 100 ? "rgba(0,255,36,0.5)" : "",
+                props.uploadError == true
+                  ? "rgba(255,0,0,0.5)"
+                  : props.uploadProgress < 100
+                  ? "rgba(0,255,36,0.5)"
+                  : "",
               borderRadius: "5px",
               zIndex: 0,
             }}
