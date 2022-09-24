@@ -4,9 +4,11 @@ import path from "path";
 import getConfig from "next/config";
 // const sharp = require("sharp");
 
+//Global date holder
+let d = new Date();
+
 const serverPath = (staticFilePath) => {
   //latest dir for images targeting todays working directory
-  let d = new Date();
   let todaysDir = d.toISOString().split("T")[0];
   return path.join(
     String(getConfig().serverRuntimeConfig.PROJECT_ROOT),
@@ -47,7 +49,10 @@ export default async function handler(req, res) {
         resolve({ fields, files });
       });
     });
-    const apiResponse = path.join(dir, newFileName);
+    const apiResponse = {
+      imagePath: path.join(dir, newFileName),
+      uploadedTime: d,
+    };
     res.status(200).json(apiResponse);
   } catch (error) {
     console.log(error);
