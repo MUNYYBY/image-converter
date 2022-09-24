@@ -13,8 +13,6 @@ module.exports = async function clearStorage() {
 
   const dir = path.join(rootDir, todaysDir);
 
-  let filesInfo = [];
-
   try {
     fs.readdir(dir, function (err, files) {
       if (err) {
