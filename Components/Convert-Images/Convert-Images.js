@@ -22,6 +22,9 @@ export default function ConvertImages() {
   //States for parameters injection
   const [imageQuality, setImageQuality] = useState("best");
 
+  //Api recieved meta data
+  var ImagesMetaDataReceived = new Array();
+
   //State to check Coversion status
   const [conversionPhases, setConversionPhases] = useState("Upload");
 
@@ -93,13 +96,12 @@ export default function ConvertImages() {
           },
         });
         console.log(res);
-        let tempValue = [...imagesToBeUploaded];
-        tempValue[i] = {
-          ...tempValue[i],
-          uploadUrl: res.data.imagePath,
+        ImagesMetaDataReceived.push({
+          name: res.data.name,
+          imagePath: res.data.imagePath,
           uploadTime: res.data.uploadTime,
-        };
-        setImagesToBeUploaded(tempValue);
+        });
+        console.log(ImagesMetaDataReceived);
       } catch (error) {
         console.log("❌ Error while posting image: ", error);
         let tempValue = [...imagesToBeUploaded];
@@ -128,7 +130,7 @@ export default function ConvertImages() {
       uplaodImage();
     } else {
       convertImages();
-      console.log(imagesToBeUploaded);
+      console.log(ImagesMetaDataReceived);
     }
   };
 
