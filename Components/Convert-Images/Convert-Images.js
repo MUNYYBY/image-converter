@@ -128,6 +128,7 @@ export default function ConvertImages() {
       uplaodImage();
     } else {
       convertImages();
+      console.log(imagesToBeUploaded);
     }
   };
 
