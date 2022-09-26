@@ -150,6 +150,17 @@ export default function ConvertImages() {
     setImagesToBeUploaded(null);
     setConversionPhases("Upload");
   };
+  const downloadImage = async () => {
+    console.log("Downloading...");
+    for (var i = 0; i < CONVERTED_IMAGE_META_API_RESPONSE.length; i++) {
+      await axios.get("/api/download-image", {
+        params: {
+          fileName: CONVERTED_IMAGE_META_API_RESPONSE[i].fileName,
+        },
+      });
+      // console.log("Download: ", res);
+    }
+  };
   const convertImages = async () => {
     console.log("Conversion Initiated");
     setConversionPhases("Converting...");
@@ -167,6 +178,7 @@ export default function ConvertImages() {
       CONVERTED_IMAGE_META_API_RESPONSE.push(res.data);
       console.log(res);
     }
+    downloadImage();
     setConversionPhases("Converted!");
   };
   const StartConversion = () => {
