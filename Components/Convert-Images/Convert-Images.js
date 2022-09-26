@@ -101,7 +101,7 @@ export default function ConvertImages() {
           imagePath: res.data.imagePath,
           uploadTime: res.data.uploadTime,
         });
-        console.log(ImagesMetaDataReceived);
+        console.log("Meta data: ", ImagesMetaDataReceived);
       } catch (error) {
         console.log("❌ Error while posting image: ", error);
         let tempValue = [...imagesToBeUploaded];
@@ -199,7 +199,7 @@ export default function ConvertImages() {
               <div id={styles.ImagesContainerStack}>
                 {imagesToBeUploaded.map((image) => {
                   return (
-                    <div>
+                    <div className="Images-placeholder" key={image.name}>
                       <ImageContainer
                         imageName={image.name}
                         imageSize={fileSize(image.size)}
