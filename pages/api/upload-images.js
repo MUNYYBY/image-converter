@@ -52,6 +52,7 @@ export default async function handler(req, res) {
     });
     const apiResponse = {
       name: originalFileName,
+      newName: newFileName,
       imagePath: path.join(dir, newFileName),
       uploadTime: d,
     };

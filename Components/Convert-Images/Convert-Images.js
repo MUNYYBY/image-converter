@@ -55,6 +55,7 @@ export default function ConvertImages() {
       for (let i = 0; i < userInjectedFiles[0].length; i++) {
         filesToBeUploaded.push({
           name: userInjectedFiles[0][i].name,
+          newName: null,
           type: userInjectedFiles[0][i].type,
           lastModified: userInjectedFiles[0][i].lastModified,
           size: userInjectedFiles[0][i].size,
@@ -81,8 +82,9 @@ export default function ConvertImages() {
             ...tempValue[i],
             uploadUrl: IMAGE_META_API_RESPONSE[j].imagePath,
             uploadTime: IMAGE_META_API_RESPONSE[j].uploadTime,
+            newName: IMAGE_META_API_RESPONSE[j].newName,
           };
-          // console.log(tempValue);
+          console.log(tempValue);
         }
       }
     }
@@ -119,6 +121,7 @@ export default function ConvertImages() {
           name: res.data.name,
           imagePath: res.data.imagePath,
           uploadTime: res.data.uploadTime,
+          newName: res.data.newName,
         });
       } catch (error) {
         console.log("❌ Error while posting image: ", error);
@@ -148,6 +151,7 @@ export default function ConvertImages() {
       console.log(imagesToBeUploaded[i].uploadUrl);
       let res = await axios.get("/api/convert-images", {
         params: {
+          fileName: imagesToBeUploaded[i].newName,
           imageUrl: imagesToBeUploaded[i].uploadUrl,
           conversionQuality: imageQuality,
           conversionFormat: ".jpeg",

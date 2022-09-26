@@ -23,7 +23,7 @@ export default async function handler(req, res) {
   }
 
   //API Call params
-  const { imageUrl, conversionQuality, conversionFormat } = req.query;
+  const { imageUrl, conversionQuality, conversionFormat, fileName } = req.query;
   console.log(imageUrl, conversionQuality);
   try {
     //Relative directories
@@ -35,12 +35,15 @@ export default async function handler(req, res) {
       fs.mkdirSync(dir);
     }
     const image = fs.readFileSync(imageUrl);
-    console.log(image);
-
     const newImage = await sharp(image)
       .webp({ quality: 50, effort: 3 })
       .resize(1000, 1000)
-      .toFile(dir + ".webp");
+      .toFile(dir + "/" + fileName + "-CONVERTED.webp");
+
+    console.log(
+      "✅ : Sucessfully converted Image at: ",
+      dir + "/" + fileName + "-CONVERTED.webp"
+    );
   } catch (error) {
     console.log("❌ Error while converting images:", error);
   }
