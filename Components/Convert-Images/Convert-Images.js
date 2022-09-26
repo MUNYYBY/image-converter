@@ -71,6 +71,25 @@ export default function ConvertImages() {
       console.log(filesToBeUploaded);
     }
   };
+  const mapApiResponseToState = () => {
+    let tempValue = null;
+    tempValue = [...imagesToBeUploaded];
+    for (var i = 0; i < imagesToBeUploaded.length; i++) {
+      for (var j = 0; j < IMAGE_META_API_RESPONSE.length; j++) {
+        if (imagesToBeUploaded[i].name === IMAGE_META_API_RESPONSE[j].name) {
+          tempValue[i] = {
+            ...tempValue[i],
+            uploadUrl: IMAGE_META_API_RESPONSE[j].imagePath,
+            uploadTime: IMAGE_META_API_RESPONSE[j].uploadTime,
+          };
+          // console.log(tempValue);
+        }
+      }
+    }
+    if (tempValue) {
+      setImagesToBeUploaded(tempValue);
+    }
+  };
   const uplaodImage = async () => {
     if (imagesToBeUploaded.length == 0) {
       return false;
@@ -111,6 +130,7 @@ export default function ConvertImages() {
         setImagesToBeUploaded(tempValue);
       }
     }
+    mapApiResponseToState();
     setConversionPhases("Convert");
   };
   const removeImage = (key) => {
@@ -119,25 +139,6 @@ export default function ConvertImages() {
         return image.url !== key;
       })
     );
-  };
-  const mapApiResponseToState = () => {
-    let tempValue = null;
-    tempValue = [...imagesToBeUploaded];
-    for (var i = 0; i < imagesToBeUploaded.length; i++) {
-      for (var j = 0; j < IMAGE_META_API_RESPONSE.length; j++) {
-        if (imagesToBeUploaded[i].name === IMAGE_META_API_RESPONSE[j].name) {
-          tempValue[i] = {
-            ...tempValue[i],
-            uploadUrl: IMAGE_META_API_RESPONSE[j].imagePath,
-            uploadTime: IMAGE_META_API_RESPONSE[j].uploadTime,
-          };
-          // console.log(tempValue);
-        }
-      }
-    }
-    if (tempValue) {
-      setImagesToBeUploaded(tempValue);
-    }
   };
   const convertImages = async () => {
     console.log("Conversion Initiated");
@@ -155,7 +156,6 @@ export default function ConvertImages() {
     }
   };
   const StartConversion = () => {
-    mapApiResponseToState();
     if (conversionPhases == "Upload") {
       uplaodImage();
     } else {
