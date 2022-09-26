@@ -113,10 +113,6 @@ export default function ConvertImages() {
     }
     setConversionPhases("Convert");
   };
-  const convertImages = () => {
-    console.log("Conversion Initiated");
-    setConversionPhases("Converting...");
-  };
   const removeImage = (key) => {
     setImagesToBeUploaded(
       imagesToBeUploaded.filter(function (image) {
@@ -129,8 +125,6 @@ export default function ConvertImages() {
     tempValue = [...imagesToBeUploaded];
     for (var i = 0; i < imagesToBeUploaded.length; i++) {
       for (var j = 0; j < IMAGE_META_API_RESPONSE.length; j++) {
-        console.log(imagesToBeUploaded[i].name);
-        console.log(IMAGE_META_API_RESPONSE[j].name);
         if (imagesToBeUploaded[i].name === IMAGE_META_API_RESPONSE[j].name) {
           tempValue[i] = {
             ...tempValue[i],
@@ -144,6 +138,14 @@ export default function ConvertImages() {
     if (tempValue) {
       setImagesToBeUploaded(tempValue);
     }
+  };
+  const convertImages = async (image) => {
+    console.log("Conversion Initiated");
+    setConversionPhases("Converting...");
+    let res = await axios.get("/api/convert-images", {
+      params: { imageUrl: "hello", conversionQuality: "world" },
+    });
+    console.log(res);
   };
   const StartConversion = () => {
     mapApiResponseToState();
