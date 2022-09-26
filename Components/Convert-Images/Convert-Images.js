@@ -15,15 +15,15 @@ import { useDropzone } from "react-dropzone";
 import fileSize from "filesize";
 import axios from "axios";
 
+//Api recieved meta data
+var IMAGE_META_API_RESPONSE = new Array();
+
 export default function ConvertImages() {
   const [imagesToBeUploaded, setImagesToBeUploaded] = useState(null);
   const [createObjectURL, setCreateObjectURL] = useState(null); // for image preview
 
   //States for parameters injection
   const [imageQuality, setImageQuality] = useState("best");
-
-  //Api recieved meta data
-  var ImagesMetaDataReceived = new Array();
 
   //State to check Coversion status
   const [conversionPhases, setConversionPhases] = useState("Upload");
@@ -96,12 +96,11 @@ export default function ConvertImages() {
           },
         });
         console.log(res);
-        ImagesMetaDataReceived.push({
+        IMAGE_META_API_RESPONSE.push({
           name: res.data.name,
           imagePath: res.data.imagePath,
           uploadTime: res.data.uploadTime,
         });
-        console.log("Meta data: ", ImagesMetaDataReceived);
       } catch (error) {
         console.log("❌ Error while posting image: ", error);
         let tempValue = [...imagesToBeUploaded];
@@ -125,12 +124,17 @@ export default function ConvertImages() {
       })
     );
   };
+  const mapApiResponseToState = () => {
+    for (var i = 0; i < imagesToBeUploaded.length; i++) {
+      // if()
+    }
+  };
   const StartConversion = () => {
     if (conversionPhases == "Upload") {
       uplaodImage();
     } else {
       convertImages();
-      console.log(ImagesMetaDataReceived);
+      console.log(IMAGE_META_API_RESPONSE);
     }
   };
 

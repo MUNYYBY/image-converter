@@ -44,6 +44,7 @@ export default async function handler(req, res) {
       //Save image coming from req
       form.parse(req, async function (err, fields, files) {
         if (err) return reject(err);
+        console.log(files);
         newFileName = files["image"].newFilename;
         resolve({ fields, files });
       });
