@@ -16,7 +16,8 @@ import fileSize from "filesize";
 import axios from "axios";
 
 //Api recieved meta data
-var IMAGE_META_API_RESPONSE = new Array();
+var UPLOAD_IMAGE_META_API_RESPONSE = new Array();
+var CONVERTED_IMAGE_META_API_RESPONSE = new Array();
 
 export default function ConvertImages() {
   const [imagesToBeUploaded, setImagesToBeUploaded] = useState(null);
@@ -72,17 +73,19 @@ export default function ConvertImages() {
       console.log(filesToBeUploaded);
     }
   };
-  const mapApiResponseToState = () => {
+  const mapUploadApiResponseToState = () => {
     let tempValue = null;
     tempValue = [...imagesToBeUploaded];
     for (var i = 0; i < imagesToBeUploaded.length; i++) {
-      for (var j = 0; j < IMAGE_META_API_RESPONSE.length; j++) {
-        if (imagesToBeUploaded[i].name === IMAGE_META_API_RESPONSE[j].name) {
+      for (var j = 0; j < UPLOAD_IMAGE_META_API_RESPONSE.length; j++) {
+        if (
+          imagesToBeUploaded[i].name === UPLOAD_IMAGE_META_API_RESPONSE[j].name
+        ) {
           tempValue[i] = {
             ...tempValue[i],
-            uploadUrl: IMAGE_META_API_RESPONSE[j].imagePath,
-            uploadTime: IMAGE_META_API_RESPONSE[j].uploadTime,
-            newName: IMAGE_META_API_RESPONSE[j].newName,
+            uploadUrl: UPLOAD_IMAGE_META_API_RESPONSE[j].imagePath,
+            uploadTime: UPLOAD_IMAGE_META_API_RESPONSE[j].uploadTime,
+            newName: UPLOAD_IMAGE_META_API_RESPONSE[j].newName,
           };
           console.log(tempValue);
         }
@@ -117,7 +120,7 @@ export default function ConvertImages() {
           },
         });
         console.log(res);
-        IMAGE_META_API_RESPONSE.push({
+        UPLOAD_IMAGE_META_API_RESPONSE.push({
           name: res.data.name,
           imagePath: res.data.imagePath,
           uploadTime: res.data.uploadTime,
@@ -133,7 +136,7 @@ export default function ConvertImages() {
         setImagesToBeUploaded(tempValue);
       }
     }
-    mapApiResponseToState();
+    mapUploadApiResponseToState();
     setConversionPhases("Convert");
   };
   const removeImage = (key) => {
@@ -161,6 +164,7 @@ export default function ConvertImages() {
           conversionFormat: ".jpeg",
         },
       });
+      CONVERTED_IMAGE_META_API_RESPONSE.push(res.data);
       console.log(res);
     }
     setConversionPhases("Converted!");

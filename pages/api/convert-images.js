@@ -31,12 +31,11 @@ export default async function handler(req, res) {
     originalName,
   } = req.query;
   console.log(imageUrl, conversionQuality);
+  //Relative directories
+  const rootDir = "/public/assets/uploads";
+  // directory for saving images
+  let dir = serverPath(rootDir);
   try {
-    //Relative directories
-    const rootDir = "/public/assets/uploads";
-    // directory for saving images
-    let dir = serverPath(rootDir);
-
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
     }
