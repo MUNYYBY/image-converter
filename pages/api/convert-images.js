@@ -55,7 +55,7 @@ export default async function handler(req, res) {
 
   const apiResponse = {
     originalName: originalName,
-    fileName: fileName,
+    fileName: fileName + "-CONVERTED.webp",
     imagePath: dir + "/" + fileName + "-CONVERTED.webp",
   };
 
