@@ -150,6 +150,7 @@ export default function ConvertImages() {
         params: {
           imageUrl: imagesToBeUploaded[i].uploadUrl,
           conversionQuality: imageQuality,
+          conversionFormat: ".jpeg",
         },
       });
       console.log(res);
