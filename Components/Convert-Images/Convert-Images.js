@@ -143,10 +143,13 @@ export default function ConvertImages() {
       })
     );
   };
+  const clearImagesState = () => {
+    setImagesToBeUploaded(null);
+    setConversionPhases("Upload");
+  };
   const convertImages = async () => {
     console.log("Conversion Initiated");
     setConversionPhases("Converting...");
-
     for (var i = 0; i < imagesToBeUploaded.length; i++) {
       console.log(imagesToBeUploaded[i].uploadUrl);
       let res = await axios.get("/api/convert-images", {
@@ -159,6 +162,7 @@ export default function ConvertImages() {
       });
       console.log(res);
     }
+    setConversionPhases("Converted!");
   };
   const StartConversion = () => {
     if (conversionPhases == "Upload") {
@@ -173,6 +177,12 @@ export default function ConvertImages() {
       setConversionPhases("Upload");
     }
   }, [imagesToBeUploaded]);
+
+  useEffect(() => {
+    if (conversionPhases == "Converted!") {
+      clearImagesState();
+    }
+  }, [conversionPhases]);
 
   return (
     <section className="Images-converter-container">
@@ -264,7 +274,8 @@ export default function ConvertImages() {
                   imagesToBeUploaded &&
                   imagesToBeUploaded?.length > 0 &&
                   conversionPhases != "Uploading" &&
-                  conversionPhases != "Converting..."
+                  conversionPhases != "Converting..." &&
+                  conversionPhases != "Converted!"
                     ? false
                     : true
                 }
