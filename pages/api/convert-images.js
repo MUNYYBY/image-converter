@@ -1,3 +1,8 @@
+import fs from "fs";
+import path from "path";
+import sharp from "sharp";
+import getConfig from "next/config";
+
 //Global date holder
 let d = new Date();
 
@@ -16,6 +21,10 @@ export default async function handler(req, res) {
   if (req.method == "POST") {
     res.status(405).json({ error: `Method '${req.method}' not allowed! ❌` });
   }
+
+  //API Call params
+  const { imageUrl, conversionQuality } = req.query;
+  console.log(imageUrl, conversionQuality);
   try {
     //Relative directories
     const rootDir = "/public/assets/uploads";
@@ -25,12 +34,11 @@ export default async function handler(req, res) {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
     }
+
+    const image = fs.readFileSync(imageUrl);
   } catch (error) {
     console.log("❌ Error while converting images:", error);
   }
-  const { imageUrl, conversionQuality } = req.query;
-
-  console.log(imageUrl, conversionQuality);
 
   res.status(200).json("convert images end point");
 }

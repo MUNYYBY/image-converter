@@ -128,8 +128,8 @@ export default function ConvertImages() {
         if (imagesToBeUploaded[i].name === IMAGE_META_API_RESPONSE[j].name) {
           tempValue[i] = {
             ...tempValue[i],
-            uploadUrl: IMAGE_META_API_RESPONSE[i].imagePath,
-            uploadTime: IMAGE_META_API_RESPONSE[i].uploadTime,
+            uploadUrl: IMAGE_META_API_RESPONSE[j].imagePath,
+            uploadTime: IMAGE_META_API_RESPONSE[j].uploadTime,
           };
           // console.log(tempValue);
         }
@@ -139,13 +139,20 @@ export default function ConvertImages() {
       setImagesToBeUploaded(tempValue);
     }
   };
-  const convertImages = async (image) => {
+  const convertImages = async () => {
     console.log("Conversion Initiated");
     setConversionPhases("Converting...");
-    let res = await axios.get("/api/convert-images", {
-      params: { imageUrl: "hello", conversionQuality: "world" },
-    });
-    console.log(res);
+
+    for (var i = 0; i < imagesToBeUploaded.length; i++) {
+      console.log(imagesToBeUploaded[i].uploadUrl);
+      let res = await axios.get("/api/convert-images", {
+        params: {
+          imageUrl: imagesToBeUploaded[i].uploadUrl,
+          conversionQuality: imageQuality,
+        },
+      });
+      console.log(res);
+    }
   };
   const StartConversion = () => {
     mapApiResponseToState();
