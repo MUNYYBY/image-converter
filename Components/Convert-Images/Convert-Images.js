@@ -155,6 +155,7 @@ export default function ConvertImages() {
       let res = await axios.get("/api/convert-images", {
         params: {
           fileName: imagesToBeUploaded[i].newName,
+          originalName: imagesToBeUploaded[i].name,
           imageUrl: imagesToBeUploaded[i].uploadUrl,
           conversionQuality: imageQuality,
           conversionFormat: ".jpeg",

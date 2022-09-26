@@ -23,7 +23,13 @@ export default async function handler(req, res) {
   }
 
   //API Call params
-  const { imageUrl, conversionQuality, conversionFormat, fileName } = req.query;
+  const {
+    imageUrl,
+    conversionQuality,
+    conversionFormat,
+    fileName,
+    originalName,
+  } = req.query;
   console.log(imageUrl, conversionQuality);
   try {
     //Relative directories
@@ -48,5 +54,11 @@ export default async function handler(req, res) {
     console.log("❌ Error while converting images:", error);
   }
 
-  res.status(200).json("convert images end point");
+  const apiResponse = {
+    originalName: originalName,
+    fileName: fileName,
+    imagePath: dir + "/" + fileName + "-CONVERTED.webp",
+  };
+
+  res.status(200).json(apiResponse);
 }
