@@ -22,6 +22,7 @@ export default async function handler(req, res) {
     res.status(405).json({ error: `Method '${req.method}' not allowed! ❌` });
   }
   let newFileName = null;
+  let originalFileName = null;
   try {
     //Relative directories
     const rootDir = "/public/assets/uploads";
@@ -44,13 +45,13 @@ export default async function handler(req, res) {
       //Save image coming from req
       form.parse(req, async function (err, fields, files) {
         if (err) return reject(err);
-        console.log(files);
         newFileName = files["image"].newFilename;
+        originalFileName = files["image"].originalFilename;
         resolve({ fields, files });
       });
     });
     const apiResponse = {
-      name: newFileName,
+      name: originalFileName,
       imagePath: path.join(dir, newFileName),
       uploadTime: d,
     };

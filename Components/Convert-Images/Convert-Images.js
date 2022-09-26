@@ -125,16 +125,32 @@ export default function ConvertImages() {
     );
   };
   const mapApiResponseToState = () => {
+    let tempValue = null;
+    tempValue = [...imagesToBeUploaded];
     for (var i = 0; i < imagesToBeUploaded.length; i++) {
-      // if()
+      for (var j = 0; j < IMAGE_META_API_RESPONSE.length; j++) {
+        console.log(imagesToBeUploaded[i].name);
+        console.log(IMAGE_META_API_RESPONSE[j].name);
+        if (imagesToBeUploaded[i].name === IMAGE_META_API_RESPONSE[j].name) {
+          tempValue[i] = {
+            ...tempValue[i],
+            uploadUrl: IMAGE_META_API_RESPONSE[i].imagePath,
+            uploadTime: IMAGE_META_API_RESPONSE[i].uploadTime,
+          };
+          // console.log(tempValue);
+        }
+      }
+    }
+    if (tempValue) {
+      setImagesToBeUploaded(tempValue);
     }
   };
   const StartConversion = () => {
+    mapApiResponseToState();
     if (conversionPhases == "Upload") {
       uplaodImage();
     } else {
       convertImages();
-      console.log(IMAGE_META_API_RESPONSE);
     }
   };
 
