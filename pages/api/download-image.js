@@ -29,12 +29,10 @@ export default async function handler(req, res) {
 
   console.log(fileUrl);
   console.log("download started");
+
   const path = fileUrl;
   const file = fs.createReadStream(path);
-  res.setHeader(
-    "Content-Disposition",
-    'attachment: filename="' + fileName + '"'
-  );
+  res.setHeader("Content-Disposition", "attachment;filename=" + fileName);
   file.pipe(res);
 
   // res
