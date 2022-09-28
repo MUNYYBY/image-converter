@@ -30,7 +30,7 @@ export default async function handler(req, res) {
     fileName,
     originalName,
   } = req.query;
-  console.log(imageUrl, conversionQuality);
+  console.log("Conversion Called: ", imageUrl, conversionQuality, fileName);
   //Relative directories
   const rootDir = "/public/assets/uploads";
   // directory for saving images
