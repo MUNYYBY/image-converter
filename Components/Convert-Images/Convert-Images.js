@@ -14,6 +14,7 @@ import ImageContainer from "../Image-Container/Image-Container";
 import { useDropzone } from "react-dropzone";
 import fileSize from "filesize";
 import axios from "axios";
+import fileDownload from "js-file-download";
 
 //Api recieved meta data
 var UPLOAD_IMAGE_META_API_RESPONSE = new Array();
@@ -153,12 +154,22 @@ export default function ConvertImages() {
   const downloadImage = async () => {
     console.log("Downloading...");
     for (var i = 0; i < CONVERTED_IMAGE_META_API_RESPONSE.length; i++) {
-      let res = await axios.get("/api/download-image", {
+      axios({
+        url: "/api/download-image",
+        method: "GET",
+        responseType: "blob", // Important
         params: {
           fileName: CONVERTED_IMAGE_META_API_RESPONSE[i].fileName,
         },
+      }).then((response) => {
+        fileDownload(response.data, "Image.jpeg");
       });
-      console.log("Download: ", res);
+      // let res = await axios.get("/api/download-image", {
+      //   params: {
+      //     fileName: CONVERTED_IMAGE_META_API_RESPONSE[i].fileName,
+      //   },
+      // });
+      // console.log("Download: ", res);
     }
   };
   const convertImages = async () => {
