@@ -2,19 +2,6 @@
  * A job that will run every 15min to clear storage of
  * image which are older then 15mins
  */
-
-let d = new Date();
-
-const serverPath = (staticFilePath) => {
-  //latest dir for images targeting todays working directory
-  let todaysDir = d.toISOString().split("T")[0];
-  return path.join(
-    String(getConfig().serverRuntimeConfig.PROJECT_ROOT),
-    staticFilePath,
-    todaysDir
-  );
-};
-
 module.exports = async function clearStorage() {
   const fs = require("fs");
   const path = require("path");
@@ -22,7 +9,10 @@ module.exports = async function clearStorage() {
 
   const rootDir = "./public/assets/uploads";
 
-  const dir = serverPath(rootDir);
+  let d = new Date();
+  let todaysDir = d.toISOString().split("T")[0];
+
+  const dir = path.join(rootDir, todaysDir);
 
   const minsAgo = new Date(d.getTime() - 1000 * 60 * 15);
 
