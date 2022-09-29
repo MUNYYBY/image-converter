@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-import sharp from "sharp";
 import getConfig from "next/config";
 
 //Global date holder
@@ -40,11 +39,9 @@ export default async function handler(req, res) {
       fs.mkdirSync(dir);
     }
     const image = fs.readFileSync(imageUrl);
-    const newImage = await sharp(image)
-      .webp({ quality: 50, effort: 3 })
-      .resize(1000, 1000)
-      .toFile(dir + "/" + fileName + "-CONVERTED.webp");
-
+    if (conversionQuality == "best") {
+    } else if (conversionQuality == "less") {
+    }
     console.log(
       "✅ : Sucessfully converted Image at: ",
       dir + "/" + fileName + "-CONVERTED.webp"

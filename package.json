@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently --kill-others \"nodemon ./jobs/bree.js\" \"next dev\"",
+    "dev": "concurrently --kill-others \"node ./jobs/bree.js\" \"next dev\"",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "lint": "next lint",
@@ -14,6 +14,7 @@
     "bootstrap": "^5.2.0",
     "bree": "^9.1.2",
     "concurrently": "^7.4.0",
+    "cors": "^2.8.5",
     "filesize": "^9.0.11",
     "formidable": "^2.0.1",
     "fs": "^0.0.1-security",
@@ -29,8 +30,7 @@
     "react-dom": "18.2.0",
     "react-dropzone": "^14.2.2",
     "react-icons": "^4.4.0",
-    "react-scripts": "^5.0.1",
-    "sharp": "^0.31.0"
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "eslint": "8.23.0",
