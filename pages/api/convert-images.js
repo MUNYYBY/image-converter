@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import getConfig from "next/config";
+import Jimp from "jimp";
 
 //Global date holder
 let d = new Date();
@@ -38,13 +39,22 @@ export default async function handler(req, res) {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
     }
-    const image = fs.readFileSync(imageUrl);
     if (conversionQuality == "best") {
+      Jimp.read(imageUrl)
+        .then((image) => {
+          return image
+            .resize(256, 256) // resize
+            .quality(60) // set JPEG quality
+            .write(dir + "/" + fileName + "-Converted.jpeg"); // save
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     } else if (conversionQuality == "less") {
     }
     console.log(
       "✅ : Sucessfully converted Image at: ",
-      dir + "/" + fileName + "-CONVERTED.webp"
+      dir + "/" + fileName + "-CONVERTED.jpeg"
     );
   } catch (error) {
     console.log("❌ Error while converting images:", error);
@@ -52,7 +62,7 @@ export default async function handler(req, res) {
 
   const apiResponse = {
     originalName: originalName,
-    fileName: fileName + "-CONVERTED.webp",
+    fileName: fileName + "-Converted.jpeg",
     imagePath: dir + "/" + fileName + "-CONVERTED.webp",
   };
 
