@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { RiPencilRuler2Line } from "react-icons/ri";
 import { TbFileDownload } from "react-icons/tb";
+import Link from "next/link";
 
 export default function LandingPage() {
   return (
@@ -28,9 +29,11 @@ export default function LandingPage() {
                 </h4>
               </div>
               <div>
-                <Button className="rounded-pill p-3 px-4 btn btn-primary">
-                  Convert Now
-                </Button>
+                <Link href="/tools/image-converter">
+                  <Button className="rounded-pill p-3 px-4 btn btn-primary">
+                    Convert Now
+                  </Button>
+                </Link>
               </div>
             </div>
           </Col>
@@ -170,7 +173,9 @@ export default function LandingPage() {
             <h4 className="text-left">
               Convert Images to any format of your like
             </h4>
-            <button className="btn btn-primary">Convert Images</button>
+            <Link href="/tools/image-converter">
+              <Button className="btn btn-primary">Convert Images</Button>
+            </Link>
           </Col>
         </Row>
       </Container>
