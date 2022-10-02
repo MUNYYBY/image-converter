@@ -21,12 +21,18 @@ export default function ConvertingPhase(props) {
               ) : (
                 <>
                   <BiBadgeCheck color="black" size={80} />
-                  <h4>Sucessfully Converted all the Images!</h4>
+                  <h5 className="text-center">
+                    Sucessfully Converted all the Images!
+                  </h5>
                 </>
               )}
             </div>
           </Col>
-          <Col lg={2} sm={10}>
+          <Col
+            lg={2}
+            sm={10}
+            className="d-flex flex-direction-column justify-content-center align-items-center mt-4 mt-lg-0"
+          >
             <Button
               disabled={props.conversionPhases != "Converted!"}
               onClick={() => props.setConversionPhases("Upload")}
