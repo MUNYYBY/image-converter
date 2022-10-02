@@ -16,6 +16,15 @@ module.exports = async function clearStorage() {
 
   const minsAgo = new Date(d.getTime() - 1000 * 60 * 15);
 
+  //Check if the directory exists
+
+  if (!fs.existsSync(dir)) {
+    console.log("-----------------------------------------------------------");
+    console.log("TODAY'S CONVERSION HAVE NOT STARTED YET. NOTHING TO DELETE!");
+    console.log("-----------------------------------------------------------");
+    return false;
+  }
+
   //Delete Images from uploads directory
 
   try {
