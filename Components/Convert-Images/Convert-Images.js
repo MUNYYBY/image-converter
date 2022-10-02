@@ -168,7 +168,6 @@ export default function ConvertImages() {
   };
   const convertImages = async () => {
     console.log("Conversion Initiated");
-    setConversionPhases("Converting...");
     for (var i = 0; i < imagesToBeUploaded.length; i++) {
       console.log(imagesToBeUploaded[i].uploadUrl);
       let res = await axios.get("/api/convert-images", {
@@ -190,6 +189,7 @@ export default function ConvertImages() {
     if (conversionPhases == "Upload") {
       uplaodImage();
     } else {
+      setConversionPhases("Converting...");
       convertImages();
     }
   };
