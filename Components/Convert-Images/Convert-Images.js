@@ -28,8 +28,11 @@ export default function ConvertImages() {
   //States for parameters injection
   const [imageQuality, setImageQuality] = useState("best");
 
-  //State to check Coversion status
-  const [conversionPhases, setConversionPhases] = useState("Converting...");
+  //State to check Coversion Status
+  const [conversionPhases, setConversionPhases] = useState("Upload");
+
+  //State to check which image is converting at the moment
+  const [conversionStatus, setConversionStatus] = useState(null);
 
   //Accepted image types/formats
   const IMAGE_TYPES = [
@@ -171,6 +174,7 @@ export default function ConvertImages() {
     console.log("Conversion Initiated");
     for (var i = 0; i < imagesToBeUploaded.length; i++) {
       console.log(imagesToBeUploaded[i].uploadUrl);
+      setConversionStatus({ fileName: imagesToBeUploaded[i].name });
       let res = await axios.get("/api/convert-images", {
         params: {
           fileName: imagesToBeUploaded[i].newName,
@@ -202,7 +206,7 @@ export default function ConvertImages() {
   }, [imagesToBeUploaded]);
 
   useEffect(() => {
-    if (conversionPhases == "Converted!") {
+    if (conversionPhases == "Upload") {
       clearImagesState();
     }
   }, [conversionPhases]);
@@ -212,7 +216,11 @@ export default function ConvertImages() {
       {/* <img src={createObjectURL} />*/}
       {conversionPhases === "Converting..." ||
       conversionPhases === "Converted!" ? (
-        <ConvertingPhase />
+        <ConvertingPhase
+          conversionStatus={conversionStatus}
+          setConversionPhases={setConversionPhases}
+          conversionPhases={conversionPhases}
+        />
       ) : (
         <>
           <Container>
