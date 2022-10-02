@@ -43,8 +43,7 @@ export default async function handler(req, res) {
       Jimp.read(imageUrl)
         .then((image) => {
           return image
-            .resize(256, 256) // resize
-            .quality(60) // set JPEG quality
+            .quality(30) // set JPEG quality
             .write(dir + "/" + fileName + "-Converted.jpeg"); // save
         })
         .catch((err) => {
