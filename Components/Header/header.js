@@ -12,6 +12,7 @@ import Logo from "../../public/assets/logo.png";
 import styles from "./header.module.css";
 import Link from "next/link";
 import getImagesCount from "../../firebase-modules/getCount";
+import { AiOutlineNumber } from "react-icons/ai";
 
 export default function Header() {
   const [imagesConversionCount, setImagesConversionCount] = useState(null);
@@ -51,7 +52,7 @@ export default function Header() {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav
-              className="m-auto my-2 my-lg-0 justify-content-center"
+              className="m-auto my-2 my-lg-0 justify-content-center align-items-center"
               navbarScroll
             >
               <NavDropdown
@@ -90,7 +91,22 @@ export default function Header() {
               </Nav.Link>
             </Nav>
             <Nav justify-content-center>
-              <h1>{imagesConversionCount}</h1>
+              <div
+                className="d-flex flex-row-reverse jsutify-content-center align-items-center"
+                style={{ width: "15rem" }}
+              >
+                <div className="d-flex flex-column jsutify-content-center align-items-center">
+                  <div className="d-flex jsutify-content-center align-items-center">
+                    <AiOutlineNumber size={28} />
+                    <h2 className="m-0">
+                      {imagesConversionCount?.toLocaleString()}
+                    </h2>
+                  </div>
+                  <div>
+                    <p className="m-0">Images Converted!</p>
+                  </div>
+                </div>
+              </div>
               {/* <Nav.Link href="#action2">
                 <p className="h4 color-black">Login</p>
               </Nav.Link>
