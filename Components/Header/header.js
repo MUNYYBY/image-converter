@@ -13,6 +13,7 @@ import styles from "./header.module.css";
 import Link from "next/link";
 import getImagesCount from "../../firebase-modules/getCount";
 import { AiOutlineNumber } from "react-icons/ai";
+import FlipNumbers from "react-flip-numbers";
 
 export default function Header() {
   const [imagesConversionCount, setImagesConversionCount] = useState(null);
@@ -99,7 +100,16 @@ export default function Header() {
                   <div className="d-flex jsutify-content-center align-items-center">
                     <AiOutlineNumber size={28} />
                     <h2 className="m-0">
-                      {imagesConversionCount?.toLocaleString()}
+                      <FlipNumbers
+                        height={20}
+                        width={20}
+                        color="black"
+                        background="none"
+                        play
+                        perspective={100}
+                        numbers={imagesConversionCount?.toLocaleString()}
+                      />
+                      {/* {imagesConversionCount?.toLocaleString()} */}
                     </h2>
                   </div>
                   <div>
