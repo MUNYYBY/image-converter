@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import getConfig from "next/config";
 import Jimp from "jimp";
-
+import setImageCount from "../../firebase-modules/setCount";
 //Global date holder
 let d = new Date();
 
@@ -42,6 +42,8 @@ export default async function handler(req, res) {
     if (conversionQuality == "best") {
       Jimp.read(imageUrl)
         .then((image) => {
+          //set the count of the image
+          setImageCount();
           return image
             .quality(30) // set JPEG quality
             .write(dir + "/" + fileName + "-Converted.jpeg"); // save
