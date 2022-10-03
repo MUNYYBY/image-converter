@@ -12,6 +12,9 @@
 /.next/
 /out/
 
+#Firebase configurations
+/Config
+
 # production
 /build
 
