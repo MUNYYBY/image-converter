@@ -6,7 +6,8 @@ export default function getImagesCount(setImagesCountData) {
     const countRef = ref(dbRT, `Count/`);
     onValue(countRef, (snapshot) => {
       const data = snapshot.val();
-      setImagesCountData(data);
+      console.log(data);
+      setImagesCountData(data.imageConversionCount);
     });
   } catch (e) {
     console.log("Error Reading count of images from realtime DB:  ", e);

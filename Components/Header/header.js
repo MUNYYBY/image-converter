@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -10,8 +11,13 @@ import Image from "next/image";
 import Logo from "../../public/assets/logo.png";
 import styles from "./header.module.css";
 import Link from "next/link";
+import getImagesCount from "../../firebase-modules/getCount";
 
 export default function Header() {
+  const [imagesConversionCount, setImagesConversionCount] = useState(null);
+  useEffect(() => {
+    getImagesCount(setImagesConversionCount);
+  }, []);
   return (
     <Navbar
       id={styles.Header}
@@ -84,10 +90,11 @@ export default function Header() {
               </Nav.Link>
             </Nav>
             <Nav justify-content-center>
-              <Nav.Link href="#action2">
+              <h1>{imagesConversionCount}</h1>
+              {/* <Nav.Link href="#action2">
                 <p className="h4 color-black">Login</p>
               </Nav.Link>
-              <Button className="primary mx-1">Create Account</Button>
+              <Button className="primary mx-1">Create Account</Button> */}
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
