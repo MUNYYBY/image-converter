@@ -42,7 +42,7 @@ export default function Header() {
                   width={65}
                 />
               </div>
-              <h4>Image-conver</h4>
+              <h4>Image-converter</h4>
             </div>
           </Link>
         </Navbar.Brand>
