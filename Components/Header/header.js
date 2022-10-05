@@ -16,7 +16,7 @@ import { AiOutlineNumber } from "react-icons/ai";
 import FlipNumbers from "react-flip-numbers";
 
 export default function Header() {
-  const [imagesConversionCount, setImagesConversionCount] = useState(null);
+  const [imagesConversionCount, setImagesConversionCount] = useState(0);
   useEffect(() => {
     getImagesCount(setImagesConversionCount);
   }, []);
@@ -42,7 +42,7 @@ export default function Header() {
                   width={65}
                 />
               </div>
-              <h4>Image-converter</h4>
+              <h4>Image-converte</h4>
             </div>
           </Link>
         </Navbar.Brand>
