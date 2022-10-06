@@ -45,13 +45,24 @@ export default async function handler(req, res) {
           //set the count of the image
           setImageCount();
           return image
-            .quality(30) // set JPEG quality
+            .quality(90) // set JPEG quality
             .write(dir + "/" + fileName + "-Converted.jpeg"); // save
         })
         .catch((err) => {
           console.error(err);
         });
     } else if (conversionQuality == "small") {
+      Jimp.read(imageUrl)
+        .then((image) => {
+          //set the count of the image
+          setImageCount();
+          return image
+            .quality(30) // set JPEG quality
+            .write(dir + "/" + fileName + "-Converted.jpeg"); // save
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     }
     console.log(
       "✅ : Sucessfully converted Image at: ",
