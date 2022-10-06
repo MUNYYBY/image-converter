@@ -51,7 +51,7 @@ export default async function handler(req, res) {
         .catch((err) => {
           console.error(err);
         });
-    } else if (conversionQuality == "less") {
+    } else if (conversionQuality == "small") {
     }
     console.log(
       "✅ : Sucessfully converted Image at: ",
