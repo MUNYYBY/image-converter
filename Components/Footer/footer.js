@@ -48,13 +48,21 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <a href="#!" className="link-dark text-decoration-none">
-                      Image Meta Checker
+                    <a className="link-dark text-decoration-none">
+                      <Link href="/tools/image-meta-checker">
+                        <a className="link-dark text-decoration-none m-0">
+                          Image Meta Checker
+                        </a>
+                      </Link>
                     </a>
                   </li>
                   <li>
-                    <a href="#!" className="link-dark text-decoration-none">
-                      Image Compression
+                    <a className="link-dark text-decoration-none">
+                      <Link href="/tools/image-compression">
+                        <a className="link-dark text-decoration-none m-0">
+                          Image Compression
+                        </a>
+                      </Link>
                     </a>
                   </li>
                 </ul>
