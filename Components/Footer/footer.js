@@ -57,11 +57,6 @@ export default function Footer() {
                       Image Compression
                     </a>
                   </li>
-                  <li>
-                    <a href="#!" className="link-dark text-decoration-none">
-                      Video Converter
-                    </a>
-                  </li>
                 </ul>
               </Col>
               <Col md={5} className="py-md-4 text-black">
