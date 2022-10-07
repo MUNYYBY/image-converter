@@ -54,7 +54,7 @@ export default function Header() {
               navbarScroll
             >
               <NavDropdown
-                title={<span className="h4">Tools</span>}
+                title={<span className="h4 text-dark">Tools</span>}
                 id="navbarScrollingDropdown"
               >
                 <NavDropdown.Item>
@@ -78,14 +78,22 @@ export default function Header() {
               <Nav.Link className="mx-4 d-none d-lg-block">
                 <div className={styles.headerNavDevider}></div>
               </Nav.Link>
-              <Nav.Link href="#action1">
-                <p className="h4">Help</p>
+              <Nav.Link>
+                <Link href="/help">
+                  <a className="link-dark text-decoration-none m-0">
+                    <p className="h4 m-0">Help</p>
+                  </a>
+                </Link>
               </Nav.Link>
               <Nav.Link className="mx-4 d-none d-lg-block">
                 <div className={styles.headerNavDevider}></div>
               </Nav.Link>
-              <Nav.Link href="#action2">
-                <p className="h4">Contact Us</p>
+              <Nav.Link>
+                <Link href="/contact-us">
+                  <a className="link-dark text-decoration-none m-0">
+                    <p className="h4 m-0">Contact Us</p>
+                  </a>
+                </Link>
               </Nav.Link>
             </Nav>
             <Nav justify-content-center>
