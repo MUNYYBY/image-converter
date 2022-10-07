@@ -70,10 +70,6 @@ export default function Header() {
                 <NavDropdown.Item href="#action4">
                   Image Compression
                 </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">
-                  Video converter
-                </NavDropdown.Item>
               </NavDropdown>
               <Nav.Link className="mx-4 d-none d-lg-block">
                 <div className={styles.headerNavDevider}></div>
