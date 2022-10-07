@@ -64,11 +64,19 @@ export default function Header() {
                     </a>
                   </Link>
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  Image Meta Checker
+                <NavDropdown.Item>
+                  <Link href="/tools/image-meta-checker">
+                    <a className="link-dark text-decoration-none m-0">
+                      Image Meta Checker
+                    </a>
+                  </Link>
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  Image Compression
+                <NavDropdown.Item>
+                  <Link href="/tools/image-compression">
+                    <a className="link-dark text-decoration-none m-0">
+                      Image Compression
+                    </a>
+                  </Link>
                 </NavDropdown.Item>
               </NavDropdown>
               <Nav.Link className="mx-4 d-none d-lg-block">
