@@ -33,7 +33,7 @@ export default function Footer() {
                   </div>
                   <p className="col-md-10">
                     Lorem ipsum dolor sit amet dolor sit consectetur adipiscing
-                    elit aliqua
+                    elit aliquam
                   </p>
                 </div>
               </Col>
