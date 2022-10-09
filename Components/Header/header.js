@@ -83,9 +83,9 @@ export default function Header() {
                 <div className={styles.headerNavDevider}></div>
               </Nav.Link>
               <Nav.Link>
-                <Link href="/help">
+                <Link href="/guide">
                   <a className="link-dark text-decoration-none m-0">
-                    <p className="h4 m-0">Help</p>
+                    <p className="h4 m-0">Guide</p>
                   </a>
                 </Link>
               </Nav.Link>
