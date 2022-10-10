@@ -231,7 +231,7 @@ export default function ConvertImages() {
               <Col md={10} sm={10}>
                 <h4 className="text-center">
                   lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                  lorem ipsum lorem ipsum lorem ipsum.
+                  lorem ipsum ipsum lorem ipsum.
                 </h4>
               </Col>
               <Col md={10} sm={10}>
