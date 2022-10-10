@@ -25,8 +25,8 @@ export default function Help() {
             <div
               className="rounded"
               style={{
-                backgroundColor: "rgba(0, 0, 0, 0.1)",
-                border: "rgba(0, 0, 0, 0.5) 2px solid",
+                backgroundColor: "rgba(0, 0, 0, 0.05)",
+                border: "rgba(0, 0, 0, 0.5) 2px dashed",
               }}
             >
               <AiOutlineFileImage size={32} />
