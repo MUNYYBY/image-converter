@@ -60,9 +60,11 @@ export default function Header() {
                 <NavDropdown.Item>
                   <NavDropdown
                     title={
-                      <a className="link-dark text-decoration-none m-0">
-                        Image converter
-                      </a>
+                      <Link href="/tools/image-converter">
+                        <a className="link-dark text-decoration-none m-0">
+                          Image converter
+                        </a>
+                      </Link>
                     }
                     id={"dropdown-button-drop-end"}
                     drop={"end"}
