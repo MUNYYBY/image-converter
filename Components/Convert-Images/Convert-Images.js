@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Accordion from "react-bootstrap/Accordion";
+import Form from "react-bootstrap/Form";
 import { BiImageAdd } from "react-icons/bi";
 import { CgArrowsExchangeAlt } from "react-icons/cg";
 import Image from "next/image";
@@ -381,27 +382,18 @@ export default function ConvertImages() {
                   <Accordion.Item eventKey="0">
                     <Accordion.Header>Advance Options</Accordion.Header>
                     <Accordion.Body>
-                      <div className="Custom-quality panel-body">
-                        <div className="form-check">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="QualityRadio1"
-                            id="QualityRadio2"
-                            checked={imageQuality === "small"}
-                            onChange={() => setImageQuality("small")}
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor="QualityRadio2"
-                          >
-                            <div className="formPanelContentContainer">
-                              <p className="fw-bold mb-0">Small Quality</p>
-                              <p className="mb-0">
-                                Ideal for display photos & uploading
-                              </p>
-                            </div>
-                          </label>
+                      <div className="panel panel-default rounded border ms-md-1 p-4 my-sm-3">
+                        <div className="Custom-quality panel-body">
+                          <div className="">
+                            <h5 className="">Custom Quality</h5>
+                            <p>
+                              Decide which quality the resulting image should
+                              have. The better the quality, the higher the file
+                              size. A lower quality will thus also reduce the
+                              file size.
+                            </p>
+                            <Form.Range />
+                          </div>
                         </div>
                       </div>
                     </Accordion.Body>
