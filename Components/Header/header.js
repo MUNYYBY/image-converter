@@ -60,12 +60,14 @@ export default function Header() {
                 <NavDropdown.Item>
                   <NavDropdown
                     title={
-                      <Link href="/tools/image-converter">
-                        <a className="link-dark text-decoration-none m-0">
-                          Image converter
-                        </a>
-                      </Link>
+                      <a className="link-dark text-decoration-none m-0">
+                        Image converter
+                      </a>
                     }
+                    id={"dropdown-button-drop-end"}
+                    drop={"end"}
+                    renderMenuOnMount={true}
+                    className="nested-nav-item-drop-end"
                   >
                     <NavDropdown.Item>
                       <a>Convert to jpeg</a>
