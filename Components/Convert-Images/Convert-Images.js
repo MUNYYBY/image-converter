@@ -380,7 +380,31 @@ export default function ConvertImages() {
                 <Accordion flush className="rounded shadow">
                   <Accordion.Item eventKey="0">
                     <Accordion.Header>Advance Options</Accordion.Header>
-                    <Accordion.Body>Hello world</Accordion.Body>
+                    <Accordion.Body>
+                      <div className="Custom-quality panel-body">
+                        <div className="form-check">
+                          <input
+                            className="form-check-input"
+                            type="radio"
+                            name="QualityRadio1"
+                            id="QualityRadio2"
+                            checked={imageQuality === "small"}
+                            onChange={() => setImageQuality("small")}
+                          />
+                          <label
+                            className="form-check-label"
+                            htmlFor="QualityRadio2"
+                          >
+                            <div className="formPanelContentContainer">
+                              <p className="fw-bold mb-0">Small Quality</p>
+                              <p className="mb-0">
+                                Ideal for display photos & uploading
+                              </p>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="1">
                     <Accordion.Header>Conversion Formats</Accordion.Header>
