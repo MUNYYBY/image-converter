@@ -58,11 +58,19 @@ export default function Header() {
                 id="navbarScrollingDropdown"
               >
                 <NavDropdown.Item>
-                  <Link href="/tools/image-converter">
-                    <a className="link-dark text-decoration-none m-0">
-                      Image converter
-                    </a>
-                  </Link>
+                  <NavDropdown
+                    title={
+                      <Link href="/tools/image-converter">
+                        <a className="link-dark text-decoration-none m-0">
+                          Image converter
+                        </a>
+                      </Link>
+                    }
+                  >
+                    <NavDropdown.Item>
+                      <a>Convert to jpeg</a>
+                    </NavDropdown.Item>
+                  </NavDropdown>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
                   <Link href="/tools/image-meta-checker">
