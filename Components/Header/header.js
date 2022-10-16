@@ -72,6 +72,16 @@ export default function Header() {
                     <NavDropdown.Item>
                       <a>Convert to jpeg</a>
                     </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <a>Convert to png</a>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <a>Convert to dif</a>
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item>
+                      <a>Convert from svg</a>
+                    </NavDropdown.Item>
                   </NavDropdown>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
