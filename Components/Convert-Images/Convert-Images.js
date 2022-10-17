@@ -8,6 +8,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Form from "react-bootstrap/Form";
 import { BiImageAdd } from "react-icons/bi";
 import { CgArrowsExchangeAlt } from "react-icons/cg";
+import { BsFileImage } from "react-icons/bs";
 import Image from "next/image";
 import uploadImage from "../../public/assets/upload.svg";
 import ImageContainer from "../Image-Container/Image-Container";
@@ -385,7 +386,12 @@ export default function ConvertImages() {
                       <div className="panel panel-default rounded border ms-md-1 p-4 my-sm-3">
                         <div className="Custom-quality panel-body">
                           <div className="">
-                            <h5 className="">Custom Quality</h5>
+                            <div className="d-flex jsutify-content-center ">
+                              <div className="Custom-Quality-Icon me-2">
+                                <BsFileImage size={26} />
+                              </div>
+                              <h5 className="">Custom Quality</h5>
+                            </div>
                             <p>
                               Decide which quality the resulting image should
                               have. The better the quality, the higher the file
