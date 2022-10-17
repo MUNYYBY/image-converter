@@ -69,7 +69,7 @@ export default function Header() {
                     id={"dropdown-button-drop-end"}
                     drop={"end"}
                     renderMenuOnMount={true}
-                    className="nested-nav-item-drop-end"
+                    className="nested-nav-item-drop-end m-0 p-0"
                   >
                     <NavDropdown.Item>
                       <a>Convert to jpeg</a>
