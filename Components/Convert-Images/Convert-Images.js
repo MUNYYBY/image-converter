@@ -303,7 +303,7 @@ export default function ConvertImages() {
                   <p className="me-md-4 mb-0 mb-sm-2 text-left fs-6">
                     <b>Note:</b> We only store you image for the life span of
                     coversion, when images are converted they are automatically
-                    deleted from our database.
+                    deleted from our
                   </p>
                   <button
                     disabled={
