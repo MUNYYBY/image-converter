@@ -231,10 +231,7 @@ export default function ConvertImages() {
                 </h1>
               </Col>
               <Col md={10} sm={10}>
-                <h4 className="text-center">
-                  lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                  lorem ipsum ipsum lorem ipsum.
-                </h4>
+                <h4 className="text-center">lorem ipsum lorem ip</h4>
               </Col>
               <Col md={10} sm={10}>
                 <div id={styles.UploadImagesPit} className="w-100">
