@@ -27,7 +27,7 @@ export default function ConvertImages() {
 
   //States for parameters injection
   const [imageQuality, setImageQuality] = useState("best");
-  const [customQuality, setCustomQuality] = useState(null);
+  const [customQuality, setCustomQuality] = useState(30);
   useEffect(() => {
     console.log(customQuality);
   }, [customQuality]);
@@ -387,11 +387,16 @@ export default function ConvertImages() {
                       <div className="panel panel-default rounded border ms-md-1 p-4 my-sm-3">
                         <div className="Custom-quality panel-body">
                           <div className="">
-                            <div className="d-flex jsutify-content-center ">
-                              <div className="Custom-Quality-Icon me-2">
-                                <BsFileImage size={26} />
+                            <div className="d-flex justify-content-between align-items-center">
+                              <div className="d-flex justify-content-center ">
+                                <div className="Custom-Quality-Icon me-2">
+                                  <BsFileImage size={26} />
+                                </div>
+                                <h5 className="">Custom Quality</h5>
                               </div>
-                              <h5 className="">Custom Quality</h5>
+                              <div className="bg-light p-2 border rounded">
+                                <p className="m-0">{customQuality}</p>
+                              </div>
                             </div>
                             <p>
                               Decide which quality the resulting image should
@@ -401,6 +406,7 @@ export default function ConvertImages() {
                             </p>
                             <Form.Range
                               onChange={(e) => setCustomQuality(e.target.value)}
+                              value={customQuality}
                             />
                           </div>
                         </div>
