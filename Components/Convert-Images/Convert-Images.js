@@ -28,6 +28,9 @@ export default function ConvertImages() {
   //States for parameters injection
   const [imageQuality, setImageQuality] = useState("best");
   const [customQuality, setCustomQuality] = useState(null);
+  useEffect(() => {
+    console.log(customQuality);
+  }, [customQuality]);
 
   //State to check Coversion Status
   const [conversionPhases, setConversionPhases] = useState("Upload");
@@ -396,7 +399,9 @@ export default function ConvertImages() {
                               size. A lower quality will thus also reduce the
                               file size.
                             </p>
-                            <Form.Range />
+                            <Form.Range
+                              onChange={(e) => setCustomQuality(e.target.value)}
+                            />
                           </div>
                         </div>
                       </div>
