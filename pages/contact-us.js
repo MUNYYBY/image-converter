@@ -15,22 +15,11 @@ export default function ContactUs() {
             style={{ backgroundColor: "rgba(0,0,0,0.08)" }}
           >
             <div className="d-flex flex-column justify-content-center align-items-center">
-              <h1 className="mb-0">Guide</h1>
+              <h1 className="mb-0">Contact-Us</h1>
               <p className="mb-0 text-center">
-                This section will give you walk-through of our tools!
+                This section will you details to contact-us if you in need of
+                our help!
               </p>
-            </div>
-          </Col>
-          <Col lg={4} md={6} sm={10} className="mt-4">
-            <div
-              className="rounded"
-              style={{
-                backgroundColor: "rgba(0, 0, 0, 0.05)",
-                border: "rgba(0, 0, 0, 0.5) 2px dashed",
-              }}
-            >
-              <AiOutlineFileImage size={32} />
-              <h4>Image-Converter</h4>
             </div>
           </Col>
         </Row>
