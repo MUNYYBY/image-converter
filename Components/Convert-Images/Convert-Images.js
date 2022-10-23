@@ -27,6 +27,7 @@ export default function ConvertImages() {
 
   //States for parameters injection
   const [imageQuality, setImageQuality] = useState("best");
+  const [customQuality, setCustomQuality] = useState(null);
 
   //State to check Coversion Status
   const [conversionPhases, setConversionPhases] = useState("Upload");
