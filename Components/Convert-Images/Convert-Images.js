@@ -329,7 +329,7 @@ export default function ConvertImages() {
                 lg={4}
                 md={4}
                 sm={10}
-                className="panel panel-default rounded shadow me-md-1 p-4 my-sm-3"
+                className="panel panel-default rounded border me-md-1 p-4 my-sm-3"
               >
                 <div className="panel-body">
                   <div className="form-check">
@@ -356,7 +356,7 @@ export default function ConvertImages() {
                 lg={4}
                 md={4}
                 sm={10}
-                className="panel panel-default my-4 rounded shadow ms-md-1 p-4 my-sm-3"
+                className="panel panel-default my-4 rounded border ms-md-1 p-4 my-sm-3"
               >
                 <div className="panel-body">
                   <div className="form-check">
@@ -380,7 +380,7 @@ export default function ConvertImages() {
                 </div>
               </Col>
               <Col lg={8} md={10} sm={10} className="mt-5">
-                <Accordion flush className="rounded shadow">
+                <Accordion flush className="rounded border">
                   <Accordion.Item eventKey="0">
                     <Accordion.Header>Advance Options</Accordion.Header>
                     <Accordion.Body>
