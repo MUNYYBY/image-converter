@@ -96,7 +96,7 @@ export default function LandingPage() {
                 <h4>Download Converted Image</h4>
                 <p>
                   lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                  lorem ipsum lorem ipsum lorem ipsum.
+                  lorem
                 </p>
               </div>
             </div>
